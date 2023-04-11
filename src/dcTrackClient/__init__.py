@@ -11,9 +11,9 @@ class Client:
 
     def __request(self, method: str, endpoint: str, body: dict = None):
         if self.__USERNAME and self.__PASSWORD:
-            return requests.request(method,  self.__BASE_URL + endpoint, json=body, auth=(self.__USERNAME, self.__PASSWORD)).json()
+            return requests.request(method,  self.__BASE_URL + '/' + endpoint, json=body, auth=(self.__USERNAME, self.__PASSWORD)).json()
         elif self.__APITOKEN:
-            return requests.request(method, self.__BASE_URL + endpoint, json=body, headers={'Authorization': 'Token ' + self.__APITOKEN}).json()
+            return requests.request(method, self.__BASE_URL + '/' + endpoint, json=body, headers={'Authorization': 'Token ' + self.__APITOKEN}).json()
         else:
             raise Exception('Undefined username/password or token.')
 
