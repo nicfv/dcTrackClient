@@ -111,3 +111,33 @@ class Client:
     def searchConnectors(self, data: dict, pageNumber: int, pageSize: int, usedCount: bool):
         """Retrieve a List of Connectors."""
         return self.__request('POST', '/api/v2/settings/connectors/quicksearch?pageNumber=' + str(pageNumber) + '&pageSize=' + str(pageSize) + '&usedCount=' + str(usedCount).lower(), data)
+
+    # Item Ports
+
+    def createDataPorts(self, itemId: int, data: dict):
+        """Use the REST API to create data ports for an existing item. If ports are already defined for the item because it is included in the Item Models Library, you can use the REST API to create additional ports for the item."""
+        return self.__request('POST', '/api/v1/items/' + str(itemId) + '/dataports/', data)
+
+    def updateDataPorts(self, itemId: int, portId: int, data: dict):
+        """Update an item's data port details using the REST API. To do this, specify the item and data port ID, and provide the updated parameter value(s)."""
+        return self.__request('PUT', '/api/v1/items/' + str(itemId) + '/dataports/' + str(portId), data)
+
+    def deleteDataPorts(self, itemId: int, portId: int):
+        """Delete an item's data port using the REST API by specifying the item ID and data port ID."""
+        return self.__request('DELETE', '/api/v1/items/' + str(itemId) + '/dataports/' + str(portId))
+
+    def getDataPorts(self, itemId: int):
+        """Use the REST API to retrieve details from all data ports on an item."""
+        return self.__request('GET', '/api/v1/items/' + str(itemId) + '/dataports/')
+
+    def getDataPort(self, itemId: int, portId: int):
+        """Use the REST API to read the details of an item's data port. To do this, specify the item and item data port ID."""
+        return self.__request('GET', '/api/v1/items/' + str(itemId) + '/dataports/' + str(portId))
+
+    def updatePowerPort(self, itemId: int, portId: int, data: dict, proceedOnWarning: bool = True):
+        """Use the REST API to create power ports for an existing item. If ports are already defined for the item because it is included in the Item Models Library, you can use the REST API to create additional ports for the item."""
+        return self.__request('PUT', '/api/v1/items/' + str(itemId) + '/powerports/' + str(portId) + '?proceedOnWarning=' + str(proceedOnWarning), data)
+
+    def compatibleConnector(self, itemId: int, portId: int, connectorId: int):
+        """Use the REST API to determine if a Connector is compatible with a specific Power Port."""
+        return self.__request('GET', '/api/v1/items/' + str(itemId) + '/powerports/' + str(portId) + '/connectors/' + str(connectorId) + '/isCompatible')
