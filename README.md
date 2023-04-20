@@ -32,7 +32,7 @@ api = Client('https://dctrack.example.com/', apiToken='asdf')
 - If it fails, the function will return a JSON object containing the error message
 
 ```py
-api.createItem({'cmbLocation': 'CRT > 2ND > IT', 'tiName': 'NEW-ITEM', 'cmbMake': 'Generic', 'cmbModel': 'Generic^Rackable^01'})
+api.createItem({'cmbLocation': 'SAMPLE LOCATION', 'tiName': 'NEW-ITEM', 'cmbMake': 'Generic', 'cmbModel': 'Generic^Rackable^01'})
 ```
 
 ### Retrieve item details:

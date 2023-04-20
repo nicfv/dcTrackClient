@@ -2,7 +2,7 @@
 with open('src/dcTrackClient/__init__.py') as f:
     content = f.read()
 
-print('## Documentation')
+print('## Module Documentation')
 
 for line in content.split('\n'):
     line = line.strip()
