@@ -134,6 +134,14 @@ class Client:
         """Use the REST API to read the details of an item's data port. To do this, specify the item and item data port ID."""
         return self.__request('GET', '/api/v1/items/' + str(itemId) + '/dataports/' + str(portId))
 
+    def getPowerPorts(self, itemId: int):
+        """Use the REST API to retrieve details from all power ports on an item."""
+        return self.__request('GET', '/api/v1/items/' + str(itemId) + '/powerports/')
+
+    def getPowerPort(self, itemId: int, portId: int):
+        """Use the REST API to retrieve details from one power port on an item."""
+        return self.__request('GET', '/api/v1/items/' + str(itemId) + '/powerports/' + str(portId))
+
     def updatePowerPort(self, itemId: int, portId: int, data: dict, proceedOnWarning: bool = True):
         """Use the REST API to create power ports for an existing item. If ports are already defined for the item because it is included in the Item Models Library, you can use the REST API to create additional ports for the item."""
         return self.__request('PUT', '/api/v1/items/' + str(itemId) + '/powerports/' + str(portId) + '?proceedOnWarning=' + str(proceedOnWarning), data)
