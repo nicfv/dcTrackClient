@@ -35,7 +35,7 @@ class Client:
         """Get item details using the item ID."""
         return self.__request('GET', 'api/v2/dcimoperations/items/' + str(id))
 
-    def quicksearch(self, data: dict, pageNumber: int, pageSize: int):
+    def searchItems(self, data: dict, pageNumber: int, pageSize: int):
         """Search for items using criteria JSON object. Search criteria can be any of the fields applicable to items, including custom fields. Specify the fields to be included in the response. This API supports pagination."""
         return self.__request('POST', 'api/v2/quicksearch/items?pageNumber=' + str(pageNumber) + '&pageSize=' + str(pageSize), data)
 
@@ -144,8 +144,38 @@ class Client:
 
     def updatePowerPort(self, itemId: int, portId: int, data: dict, proceedOnWarning: bool = True):
         """Use the REST API to create power ports for an existing item. If ports are already defined for the item because it is included in the Item Models Library, you can use the REST API to create additional ports for the item."""
-        return self.__request('PUT', '/api/v1/items/' + str(itemId) + '/powerports/' + str(portId) + '?proceedOnWarning=' + str(proceedOnWarning), data)
+        return self.__request('PUT', '/api/v1/items/' + str(itemId) + '/powerports/' + str(portId) + '?proceedOnWarning=' + str(proceedOnWarning).lower(), data)
 
     def compatibleConnector(self, itemId: int, portId: int, connectorId: int):
         """Use the REST API to determine if a Connector is compatible with a specific Power Port."""
         return self.__request('GET', '/api/v1/items/' + str(itemId) + '/powerports/' + str(portId) + '/connectors/' + str(connectorId) + '/isCompatible')
+
+    # Locations
+
+    def getLocations(self):
+        """Returns a list or all Locations."""
+        return self.__request('GET', '/api/v1/locations')
+
+    def getLocation(self, id: int):
+        """Get a single Location."""
+        return self.__request('GET', '/api/v1/locations/' + str(id))
+
+    def addLocation(self, data: dict, proceedOnWarning: bool = False):
+        """Add a Location."""
+        return self.__request('POST', '/api/v1/locations?proceedOnWarning=' + str(proceedOnWarning).lower(), data)
+
+    def modifyLocation(self, id: int, data: dict, proceedOnWarning: bool = False):
+        """Modify Location details for a single Location. Payload contains new location details. You do not have have to provide all details, but only those that you want to modify."""
+        return self.__request('PUT', '/api/v1/locations/' + str(id) + '?proceedOnWarning=' + str(proceedOnWarning).lower(), data)
+
+    def deleteLocation(self, id: int):
+        """Delete a Location."""
+        return self.__request('DELETE', '/api/v1/locations/' + str(id))
+
+    def searchLocations(self, data: dict, pageNumber: int, pageSize: int):
+        """Search for one or more Locations by user supplied search criteria."""
+        return self.__request('POST', '/api/v2/quicksearch/locations?pageNumber=' + str(pageNumber) + '&pageSize=' + str(pageSize), data)
+
+    def getLocationFieldList(self):
+        """Returns a list of all Location fields."""
+        return self.__request('GET', '/api/v2/quicksearch/locations/locationListFields')
