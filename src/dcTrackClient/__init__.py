@@ -43,7 +43,7 @@ class Client:
         """Returns a list of Items contained in a Cabinet using the ItemID of the Cabinet. The returned list includes all of the Cabinet's Items including Passive Items."""
         return self.__request('POST', 'api/v2/items/cabinetItems/' + str(cabId))
 
-    def manageItemsBulk(self, cabId: int):
+    def manageItemsBulk(self, cabId: int):  # TODO: name is wrong???
         """Retrieve a list of Items contained in a Cabinet including Passive Items."""
         return self.__request('POST', 'api/v2/items/cabinetItems/' + str(cabId))
 
@@ -61,7 +61,7 @@ class Client:
         """Modify a Make."""
         return self.__request('POST', '/api/v2/makes/' + str(id), data)
 
-    def deleteMake(self, id: int):
+    def deleteMake(self, id: int):  # TODO: method is wrong??
         """Delete a Make."""
         return self.__request('POST', '/api/v2/makes/' + str(id))
 
