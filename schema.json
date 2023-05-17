@@ -1,0 +1,49 @@
+{
+    "$schema": "http://json-schema.org/schema",
+    "type": "object",
+    "patternProperties": {
+        "^[a-zA-Z][a-zA-Z0-9_]*$": {
+            "description": "Represents one single HTTP transaction as a function in the API client.",
+            "type": "object",
+            "properties": {
+                "method": {
+                    "description": "The HTTP method for this transaction.",
+                    "enum": [
+                        "get",
+                        "post",
+                        "put",
+                        "patch",
+                        "delete"
+                    ],
+                    "default": "get"
+                },
+                "endpoint": {
+                    "description": "The HTTP URL endpoint for this transaction.",
+                    "type": "string"
+                },
+                "description": {
+                    "description": "A short description, used for documentation.",
+                    "type": "string"
+                },
+                "parameters": {
+                    "description": "List all query parameters here.",
+                    "type": "object",
+                    "patternProperties": {
+                        "^[a-zA-Z0-9_]+$": {
+                            "description": "Represents one query parameter with a corresponding data type.",
+                            "enum": [
+                                "string",
+                                "number",
+                                "boolean"
+                            ],
+                            "default": "string"
+                        }
+                    }
+                }
+            },
+            "required": [
+                "endpoint"
+            ]
+        }
+    }
+}

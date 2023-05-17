@@ -1,0 +1,141 @@
+{
+    "$schema": "schema.json",
+    "getItem": {
+        "endpoint": "api/v2/dcimoperations/items/{id}",
+        "description": "Get item details using the item ID."
+    },
+    "createItem": {
+        "method": "post",
+        "description": "Create a new item. When returnDetails is set to true, the API call will return the full json payload. If set to false, the call returns only the \"id\" and \"tiName\".",
+        "endpoint": "api/v2/dcimoperations/items",
+        "parameters": {
+            "returnDetails": "boolean"
+        }
+    },
+    "updateItem": {
+        "method": "put",
+        "description": "Update an existing item. When returnDetails is set to true, the API call will return the full json payload. If set to false, the call returns only the \"id\" and \"tiName\".",
+        "endpoint": "api/v2/dcimoperations/items/{id}",
+        "parameters": {
+            "returnDetails": "boolean"
+        }
+    },
+    "deleteItem": {
+        "method": "delete",
+        "description": "Delete an item using the item ID.",
+        "endpoint": "api/v2/dcimoperations/items/{id}"
+    },
+    "searchItems": {
+        "method": "post",
+        "description": "Search for items using criteria JSON object. Search criteria can be any of the fields applicable to items, including custom fields. Specify the fields to be included in the response. This API supports pagination. Returns a list of items with the specified information.",
+        "endpoint": "api/v2/quicksearch/items",
+        "parameters": {
+            "pageNumber": "number",
+            "pageSize": "number"
+        }
+    },
+    "cabinetItems": {
+        "description": "Returns a list of Items contained in a Cabinet using the ItemID of the Cabinet. The returned list includes all of the Cabinet's Items including Passive Items.",
+        "endpoint": "api/v2/items/cabinetItems/{CabinetId}"
+    },
+    "manageItemsBulk": {
+        "method": "post",
+        "description": "Add/Update/Delete Items.",
+        "endpoint": "api/v2/dcimoperations/items/bulk"
+    },
+    "getMakes": {
+        "description": "Returns a list of makes with basic information.",
+        "endpoint": "api/v2/makes"
+    },
+    "createMake": {
+        "method": "post",
+        "description": "Add a new Make. Returns JSON entity containing Make information that was passed in from the Request payload.",
+        "endpoint": "api/v2/makes"
+    },
+    "updateMake": {
+        "method": "put",
+        "description": "Modify a Make. Returns JSON entity containing Make information that was passed in from the Request payload.",
+        "endpoint": "api/v2/makes/{makeId}"
+    },
+    "deleteMake": {
+        "method": "delete",
+        "description": "Delete a Make.",
+        "endpoint": "api/v2/makes/{makeId}"
+    },
+    "searchMakes": {
+        "description": "Search for a make using the make name. Returns a list of makes with basic information.",
+        "endpoint": "api/v2/dcimoperations/search/makes/{makeName}"
+    },
+    "getModel": {
+        "description": "Get Model fields for the specified Model ID. usedCounts is an optional parameter that determines if the count of Items for the specified model is returned in the response. If set to \"true\" the counts will be included in the response, if omitted or set to \"false\" the item count will not be included in the response.",
+        "endpoint": "api/v2/models/{modelId}",
+        "parameters": {
+            "usedCounts": "number"
+        }
+    },
+    "createModel": {
+        "method": "post",
+        "description": "Add a new Model. Returns JSON entity containing Make information that was passed in from the Request payload. \"proceedOnWarning\" relates to the warning messages that are thrown in dcTrack when you try to delete custom fields that are in use. The \"proceedOnWarning\" value can equal either \"true\" or \"false.\" If \"proceedOnWarning\" equals \"true,\" business warnings will be ignored. If \"proceedOnWarning\" equals \"false,\" business warnings will not be ignored. Fields that are not in the payload will remain unchanged.",
+        "endpoint": "api/v2/models",
+        "parameters": {
+            "returnDetails": "boolean",
+            "proceedOnWarning": "boolean"
+        }
+    },
+    "deleteModel": {
+        "method": "delete",
+        "description": "Delete a Model using the Model ID.",
+        "endpoint": "api/v2/models/{id}"
+    },
+    "searchModels": {
+        "method": "post",
+        "description": "Search for models by user supplied search criteria. Returns a list of models with the \"selectedColumns\" returned in the payload. Search by Alias is not supported.",
+        "endpoint": "api/v2/quicksearch/models",
+        "parameters": {
+            "pageNumber": "number",
+            "pageSize": "number"
+        }
+    },
+    "deleteModelImage": {
+        "method": "delete",
+        "description": "Delete a Mode Image using the Model ID and the Image Orientation, where id is the Model Id and orientation is either front or back",
+        "endpoint": "api/v2/models/images/{id}/{orientation}"
+    },
+    "getConnector": {
+        "description": "Get a Connector record by ID. Returns a Connector with all information including Compatible Connectors. The usedCount parameter is optional. If usedCount is true, the response will include the number of times the connector is in use by Models and Items. If false, no counts are returned. If omitted the default is false.",
+        "endpoint": "api/v2/settings/connectors/{connectorId}",
+        "parameters": {
+            "usedCount": "boolean"
+        }
+    },
+    "createConnector": {
+        "method": "post",
+        "description": "Add a new Connector. Returns JSON entity containing Connector information that was passed in from the Request payload.",
+        "endpoint": "api/v2/settings/connectors"
+    },
+    "updateConnector": {
+        "method": "put",
+        "description": "Update an existing Connector. Returns JSON entity containing Connector information that was passed in from the Request payload.",
+        "endpoint": "api/v2/settings/connectors/{connectorId}"
+    },
+    "deleteConnector": {
+        "method": "post",
+        "description": "Delete one or more Connector records.",
+        "endpoint": "api/v2/settings/connectors/delete"
+    },
+    "searchConnectors": {
+        "method": "post",
+        "description": "Retrieve a List of Connectors. Returns JSON entity containing Connector information that was passed in from the Request payload. Please note, Compatible Connectors are not returned by this API, but can be returned when querying a single Connector using the /api/v2/settings/connectors/{connectorId} API.",
+        "endpoint": "api/v2/settings/connectors/quicksearch",
+        "parameters": {
+            "pageNumber": "number",
+            "pageSize": "number",
+            "usedCount": "boolean"
+        }
+    },
+    "deleteConnectorImage": {
+        "method": "delete",
+        "description": "Delete a Connector Image using the Connector ID.",
+        "endpoint": "api/v2/settings/connectors/{connectorId}/images"
+    }
+}
