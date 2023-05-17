@@ -25,10 +25,10 @@ jobs:
       run: sed -i 's/%VERSION%/${{ env.VER }}/' py/pyproject.toml js/package.json
     - name: Generate code
       run: python .github/workflows/gen.py
-    - name: Build package
+    - name: Build Python package
       run: python -m build py
       if: ${{ env.VER != env.PYPI }}
-    - name: Publish package
+    - name: Publish Python package
       run: python -m twine upload py/dist/* -u __token__ -p ${{ secrets.PYPI_API_TOKEN }}
       if: ${{ env.VER != env.PYPI }}
     - name: Set up Node
@@ -37,7 +37,9 @@ jobs:
       with:
         node-version: 18
         registry-url: 'https://registry.npmjs.org'
-    - name: Publish NPM package
+    - name: Copy README
+      run: cp README.md js
+    - name: Publish Node package
       run: cd js && npm publish
       if: ${{ env.VER != env.NPM }}
       env:
