@@ -29,11 +29,10 @@ jobs:
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
-        pip install build
-        pip install jsonschema
+        pip install build twine jsonschema
     - name: Generate code
       run: python .github/workflows/gen.py
     - name: Build package
-      run: cd py && python -m build
+      run: python -m build py
     - name: Publish package
       run: python -m twine upload py/dist/* -u __token__ -p ${{ secrets.PYPI_API_TOKEN }}
