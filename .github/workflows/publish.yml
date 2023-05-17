@@ -17,6 +17,7 @@ jobs:
       uses: actions/setup-node@v3
       with:
         node-version: 18
+        registry-url: 'https://registry.npmjs.org'
     - name: Install dependencies
       run: |
         pip --version
@@ -28,3 +29,7 @@ jobs:
       run: python -m build py
     - name: Publish package
       run: python -m twine upload py/dist/* -u __token__ -p ${{ secrets.PYPI_API_TOKEN }}
+    - name: Publish NPM package
+      run: npm publish
+      env:
+        NODE_AUTH_TOKEN: ${{ secrets.NPM_API_TOKEN }}
