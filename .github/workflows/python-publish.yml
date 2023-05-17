@@ -36,8 +36,4 @@ jobs:
     - name: Build package
       run: cd py && python -m build
     - name: Publish package
-      uses: pypa/gh-action-pypi-publish@release/v1
-      with:
-        packages-dir: py
-        user: __token__
-        password: ${{ secrets.PYPI_API_TOKEN }}
+      run: python -m twine upload py/dist/* -u __token__ -p ${{ secrets.PYPI_API_TOKEN }}
