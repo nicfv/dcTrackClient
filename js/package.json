@@ -3,6 +3,7 @@
   "version": "%VERSION%",
   "description": "Sunbird dcTrack API client in JavaScript",
   "main": "src/index.js",
+  "type": "module",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/nicfv/dcTrackClient.git"

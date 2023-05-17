@@ -1,4 +1,4 @@
-class Client {
+export class Client {
     static #base_url;
     static #username;
     static #password;
@@ -24,4 +24,11 @@ class Client {
         }
         return (await fetch(this.#base_url + '/' + endpoint, { 'method': method, 'headers': [['Authorization', authHeader]], 'body': JSON.stringify(body) })).json();
     }
+}
+
+/**
+ * Use this for testing.
+ */
+export function getItem(id = 0) {
+    return Client.request('GET', 'api/v2/dcimoperations/items/' + id);
 }

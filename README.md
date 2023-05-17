@@ -1,8 +1,8 @@
 **WARNING: this project is still under development and may not be stable!**
 
-# dcTrackClient ![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/nicfv/dcTrackClient/publish.yml?logo=github) ![PyPI](https://img.shields.io/pypi/v/dcTrackClient) ![PyPI - Downloads](https://img.shields.io/pypi/dm/dcTrackClient?logo=pypi)
+# dcTrackClient ![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/nicfv/dcTrackClient/publish.yml?logo=github) ![PyPI](https://img.shields.io/pypi/v/dcTrackClient) ![PyPI - Downloads](https://img.shields.io/pypi/dm/dcTrackClient?logo=pypi) ![npm](https://img.shields.io/npm/v/dctrackclient) ![npm](https://img.shields.io/npm/dt/dctrackclient?logo=npm)
 
-Sunbird [dcTrack](https://www.sunbirddcim.com/) API client in Python
+Sunbird [dcTrack](https://www.sunbirddcim.com/) API clients in Python and JavaScript
 
 ## Initialize a connection to the dcTrack API
 
