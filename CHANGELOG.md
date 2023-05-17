@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.4.2
+
+- Copy readme file to NPM package folder
+
 ## 0.4.1
 
 - Only publish NPM package if current version is greater

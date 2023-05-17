@@ -37,8 +37,9 @@ jobs:
       with:
         node-version: 18
         registry-url: 'https://registry.npmjs.org'
-    - name: Copy README
+    - name: Copy readme
       run: cp README.md js
+      if: ${{ env.VER != env.NPM }}
     - name: Publish Node package
       run: cd js && npm publish
       if: ${{ env.VER != env.NPM }}
