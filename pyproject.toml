@@ -3,7 +3,7 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 [project]
 name = "dcTrackClient"
-version = "0.2.4"
+version = "0.3.0"
 authors = [
   { name="Nicolas Ventura", email="ventura@lbl.gov" },
 ]
