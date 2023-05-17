@@ -4,27 +4,49 @@
 
 Sunbird [dcTrack](https://www.sunbirddcim.com/) API clients in Python and JavaScript
 
+## Installation
+
+> dcTrackClient can be installed from the package manager of your choice.
+
+### Python
+
+```
+pip install dcTrackClient
+```
+
+### JavaScript
+
+```
+npm i dctrackclient
+```
+
 ## Initialize a connection to the dcTrack API
 
-Import the class:
+> Authentication is by using a base URL (the same URL to access the GUI) and a username and password, or a base URL and an API token.
+
+### Python
 
 ```py
 from dcTrackClient import Client
-```
-
-Authenticate using a base URL (the same URL to access the GUI) and a username and password:
-
-```py
+## Using a username and password ##
 api = Client('https://dctrack.example.com/', username='user', password='pass')
+## Using an API token ##
+api = Client('https://dctrack.example.com/', apiToken='token')
 ```
 
-Authenticate using a base URL and an API token:
+### JavaScript
 
-```py
-api = Client('https://dctrack.example.com/', apiToken='asdf')
+```js
+import * as api from 'dctrackclient';
+// Using a username and password // 
+api.Client.authenticate('https://dctrack.example.com/', { username: 'user', password: 'pass' });
+// Using an API token //
+api.Client.authenticate('https://dctrack.example.com/', { apiToken: 'token' });
 ```
 
 ## Usage Example
+
+> This section is currently under construction.
 
 ### Create an item:
 

@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.4.4
+
+- Remove `types.d.ts` from NPM package
+- Improve installation documentation in `README.md`
+
 ## 0.4.3
 
 - Update badges in `README.md`
