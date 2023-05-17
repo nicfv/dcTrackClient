@@ -60,7 +60,7 @@ def generatePythonFunction(transaction: str, method: str, endpoint: str, descrip
     if hasPayload(method):
         FUNC += ', ' + params[-1]
     FUNC += ')\n'
-    with open('src/dcTrackClient/__init__.py', 'a') as f:
+    with open('py/src/dcTrackClient/__init__.py', 'a') as f:
         f.write(FUNC)
 
 
