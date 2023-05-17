@@ -1,6 +1,6 @@
 {
   "name": "dctrackclient",
-  "version": "0.0.0",
+  "version": "%VERSION%",
   "description": "Sunbird dcTrack API client in JavaScript",
   "main": "src/index.js",
   "scripts": {

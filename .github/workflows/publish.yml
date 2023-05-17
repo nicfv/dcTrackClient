@@ -13,23 +13,30 @@ jobs:
       uses: actions/setup-python@v3
       with:
         python-version: '3.x'
+    - name: Install dependencies
+      run: |
+        pip install build twine jsonschema requests
+    - name: Get versions
+      run: |
+        # echo "NPM=$(npm v dctrackclient version)" >> "${GITHUB_ENV}"
+        echo "PYPI=$(python .github/workflows/pypi-ver.py dctrackclient)" >> "${GITHUB_ENV}"
+        echo "VER=$(grep -oE "[0-9]+\.[0-9]+\.[0-9]+" CHANGELOG.md | head -n1)" >> "${GITHUB_ENV}"
+    - name: Update versions
+      run: sed -i '' 's/%VERSION%/${{ env.VER }}/' py/pyproject.toml js/package.json
+    - name: Generate code
+      run: python .github/workflows/gen.py
+    - name: Build package
+      run: python -m build py
+      if: ${{ env.VER != env.PYPI }}
+    - name: Publish package
+      run: python -m twine upload py/dist/* -u __token__ -p ${{ secrets.PYPI_API_TOKEN }}
+      if: ${{ env.VER != env.PYPI }}
     - name: Set up Node
       uses: actions/setup-node@v3
       with:
         node-version: 18
         registry-url: 'https://registry.npmjs.org'
-    - name: Install dependencies
-      run: |
-        pip --version
-        python -m pip install --upgrade pip
-        pip install build twine jsonschema
-    - name: Generate code
-      run: python .github/workflows/gen.py
-    - name: Build package
-      run: python -m build py
-    - name: Publish package
-      run: python -m twine upload py/dist/* -u __token__ -p ${{ secrets.PYPI_API_TOKEN }}
     - name: Publish NPM package
-      run: npm publish
+      run: cd js && npm publish
       env:
         NODE_AUTH_TOKEN: ${{ secrets.NPM_API_TOKEN }}
