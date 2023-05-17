@@ -33,7 +33,7 @@ jobs:
         pip install jsonschema
     - name: Generate code
       run: python .github/workflows/gen.py
-    - name: Build package
+    - name: cd py && Build package
       run: python -m build
     - name: Publish package
       uses: pypa/gh-action-pypi-publish@release/v1
