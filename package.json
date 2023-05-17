@@ -1,0 +1,20 @@
+{
+  "name": "dctrackclient",
+  "version": "1.0.0",
+  "description": "**WARNING: this project is still under development and may not be stable!**",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nicfv/dcTrackClient.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nicfv/dcTrackClient/issues"
+  },
+  "homepage": "https://github.com/nicfv/dcTrackClient#readme"
+}
