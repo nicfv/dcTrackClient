@@ -3,14 +3,17 @@
   "version": "%VERSION%",
   "description": "Sunbird dcTrack API client in JavaScript",
   "main": "src/index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/nicfv/dcTrackClient.git"
   },
-  "keywords": [],
+  "keywords": [
+    "api",
+    "client",
+    "dcim",
+    "sunbird",
+    "dctrack"
+  ],
   "author": {
     "name": "Nicolas Ventura",
     "email": "ventura@lbl.gov"
@@ -19,5 +22,6 @@
   "bugs": {
     "url": "https://github.com/nicfv/dcTrackClient/issues"
   },
-  "homepage": "https://github.com/nicfv/dcTrackClient#readme"
+  "homepage": "https://github.com/nicfv/dcTrackClient#readme",
+  "readme": "../README.md"
 }

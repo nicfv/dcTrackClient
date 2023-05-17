@@ -18,7 +18,7 @@ jobs:
         pip install build twine jsonschema requests
     - name: Get versions
       run: |
-        # echo "NPM=$(npm v dctrackclient version)" >> "${GITHUB_ENV}"
+        echo "NPM=$(npm v dctrackclient version)" >> "${GITHUB_ENV}"
         echo "PYPI=$(python .github/workflows/pypi-ver.py dctrackclient)" >> "${GITHUB_ENV}"
         echo "VER=$(grep -oE "[0-9]+\.[0-9]+\.[0-9]+" CHANGELOG.md | head -n1)" >> "${GITHUB_ENV}"
     - name: Update versions
@@ -33,10 +33,12 @@ jobs:
       if: ${{ env.VER != env.PYPI }}
     - name: Set up Node
       uses: actions/setup-node@v3
+      if: ${{ env.VER != env.NPM }}
       with:
         node-version: 18
         registry-url: 'https://registry.npmjs.org'
     - name: Publish NPM package
       run: cd js && npm publish
+      if: ${{ env.VER != env.NPM }}
       env:
         NODE_AUTH_TOKEN: ${{ secrets.NPM_API_TOKEN }}
