@@ -37,11 +37,11 @@ api = Client('https://dctrack.example.com/', apiToken='token')
 ### JavaScript
 
 ```js
-import * as api from 'dctrackclient';
+import { Client } from 'dctrackclient';
 // Using a username and password // 
-api.Client.authenticate('https://dctrack.example.com/', { username: 'user', password: 'pass' });
+const api = new Client('https://dctrack.example.com/', { username: 'user', password: 'pass' });
 // Using an API token //
-api.Client.authenticate('https://dctrack.example.com/', { apiToken: 'token' });
+const api = new Client('https://dctrack.example.com/', { apiToken: 'token' });
 ```
 
 ## Usage Example
