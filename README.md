@@ -10,14 +10,14 @@ Sunbird [dcTrack](https://www.sunbirddcim.com/) API clients in Python and JavaSc
 
 ### Python
 
-```
-pip install dcTrackClient
+```shell
+pip install dcTrackClient==%VERSION%
 ```
 
 ### JavaScript
 
-```
-npm i dctrackclient
+```shell
+npm i dctrackclient@%VERSION%
 ```
 
 ## Initialize a connection to the dcTrack API
