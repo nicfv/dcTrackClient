@@ -1,19 +1,22 @@
 export class Client {
-    static #base_url;
-    static #username;
-    static #password;
-    static #apiToken;
+    #base_url;
+    #username;
+    #password;
+    #apiToken;
     /**
      * Provide either a username and password, or an API token to access the dcTrack database with JavaScript.
      */
-    static authenticate(base_url = '', credentials = { username: '', password: '', apiToken: '' }) {
+    constructor(base_url = '', credentials = { username: '', password: '', apiToken: '' }) {
         this.#base_url = base_url;
         this.#username = credentials.username;
         this.#password = credentials.password;
         this.#apiToken = credentials.apiToken;
     }
 
-    static async request(method = '', endpoint = '', body = undefined) {
+    /**
+     * @private Internal class method.
+     */
+    async request(method = '', endpoint = '', body = undefined) {
         let authHeader = '';
         if (this.#username && this.#password) {
             authHeader = 'Basic ' + btoa(this.#username + ':' + this.#password);
@@ -24,11 +27,4 @@ export class Client {
         }
         return (await fetch(this.#base_url + '/' + endpoint, { 'method': method, 'headers': [['Authorization', authHeader]], 'body': JSON.stringify(body) })).json();
     }
-}
-
-/**
- * Use this for testing.
- */
-export function getItem(id = 0) {
-    return Client.request('GET', 'api/v2/dcimoperations/items/' + id);
 }
