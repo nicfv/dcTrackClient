@@ -1,5 +1,17 @@
 # Changelog
 
+## 0.5.0
+
+- Generate JavaScript functions
+- JavaScript `Client` is now an instance class
+- Update installation commands in `README.md` to show version number
+- Update JavaScript setup documentation
+- Fix regular expressions in JSON schema
+    - Function and parameter names must start with a letter, but can have numbers and underscores
+- Stricter checking in JSON schema
+    - Improved error reporting
+- Readme badges are now clickable links
+
 ## 0.4.4
 
 - Remove `types.d.ts` from NPM package
