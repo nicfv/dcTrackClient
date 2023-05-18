@@ -29,7 +29,7 @@
                     "description": "List all query parameters here.",
                     "type": "object",
                     "patternProperties": {
-                        "^[a-zA-Z0-9_]+$": {
+                        "^[a-z][a-zA-Z0-9_]*$": {
                             "description": "Represents one query parameter with a corresponding data type.",
                             "enum": [
                                 "string",
