@@ -27,7 +27,7 @@ def getPythonType(type: str) -> str:
     raise Exception('Unknown type ' + type)
 
 
-def generateDocumentation(transaction: str, method: str, endpoint: str, description: str, params: list[str], paramtypes: list[str]):
+def generateDocumentation(transaction: str, method: str, endpoint: str, description: str, params: list[str], paramtypes: list[str]) -> None:
     MD = '\n## ' + transaction + '(' + ', '.join(params) + ')\n'
     if description:
         MD += '> ' + description + '\n'
@@ -47,7 +47,7 @@ def generateDocumentation(transaction: str, method: str, endpoint: str, descript
         f.write(MD)
 
 
-def generatePythonFunction(transaction: str, method: str, endpoint: str, description: str, params: list[str], paramtypes: list[str], a: int, b: int):
+def generatePythonFunction(transaction: str, method: str, endpoint: str, description: str, params: list[str], paramtypes: list[str], a: int, b: int) -> None:
     endpoint = endpoint.replace('{', '\' + str(').replace('}', ') + \'') + '/?'
     for i in range(a, b):
         endpoint += params[i] + '=\' + str(' + params[i] + ') + \'&'
@@ -61,6 +61,23 @@ def generatePythonFunction(transaction: str, method: str, endpoint: str, descrip
         FUNC += ', ' + params[-1]
     FUNC += ')\n'
     with open('py/src/dcTrackClient/__init__.py', 'a') as f:
+        f.write(FUNC)
+
+
+def generateJavaScriptFunction(transaction: str, method: str, endpoint: str, description: str, params: list[str], paramtypes: list[str], a: int, b: int) -> None:
+    endpoint = endpoint.replace('{', '\' + ').replace('}', ' + \'') + '/?'
+    for i in range(a, b):
+        endpoint += params[i] + '=\' + ' + params[i] + ' + \'&'
+    FUNC = '\n/**\n * ' + description + '\n'
+    for i in range(0, len(params)):
+        FUNC += ' * @param {' + paramtypes[i] + '} ' + params[i] + '\n'
+    FUNC += ' */\nClient.prototype.' + transaction + \
+        ' = function (' + ', '.join(params) + ') {\n'
+    FUNC += '    return this.request(\'' + method + '\', \'/' + endpoint + '\''
+    if hasPayload(method):
+        FUNC += ', ' + params[-1]
+    FUNC += ');\n}\n'
+    with open('js/src/index.js', 'a') as f:
         f.write(FUNC)
 
 
@@ -86,4 +103,6 @@ for transaction in api:
             PTYPES += ['object']
         generatePythonFunction(transaction, METHOD, ENDPT,
                                DESC, PARAMS, PTYPES, A, B)
+        generateJavaScriptFunction(transaction, METHOD, ENDPT,
+                                   DESC, PARAMS, PTYPES, A, B)
         generateDocumentation(transaction, METHOD, ENDPT, DESC, PARAMS, PTYPES)
