@@ -2,6 +2,7 @@
     "$schema": "http://json-schema.org/schema",
     "type": "object",
     "patternProperties": {
+        "^\\$": true,
         "^[a-zA-Z][a-zA-Z0-9_]*$": {
             "description": "Represents one single HTTP transaction as a function in the API client.",
             "type": "object",
@@ -29,7 +30,7 @@
                     "description": "List all query parameters here.",
                     "type": "object",
                     "patternProperties": {
-                        "^[a-z][a-zA-Z0-9_]*$": {
+                        "^[a-zA-Z][a-zA-Z0-9_]*$": {
                             "description": "Represents one query parameter with a corresponding data type.",
                             "enum": [
                                 "string",
@@ -38,12 +39,15 @@
                             ],
                             "default": "string"
                         }
-                    }
+                    },
+                    "additionalProperties": false
                 }
             },
             "required": [
                 "endpoint"
-            ]
+            ],
+            "additionalProperties": false
         }
-    }
+    },
+    "additionalProperties": false
 }
