@@ -8,7 +8,11 @@ with open('api.json') as f:
 with open(api['$schema']) as f:
     schema = json.load(f)
 
-jsonschema.validate(api, schema)
+try:
+    jsonschema.validate(api, schema)
+except Exception as e:
+    print(e.message)
+    exit(1)
 
 
 def hasPayload(method: str) -> bool:
