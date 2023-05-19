@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.5.1
+
+- Major updates to the example guide in readme file
+- Add `Content-Type: application/json` header in the JavaScript library
+
 ## 0.5.0
 
 - Generate JavaScript functions
