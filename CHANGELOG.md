@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.5.2
+
+- Added API functions for managing item ports
+- Style updates in readme file
+
 ## 0.5.1
 
 - Major updates to the example guide in readme file
