@@ -25,6 +25,6 @@ export class Client {
         } else {
             throw new Error('Undefined username/password or token.');
         }
-        return (await fetch(this.#base_url + '/' + endpoint, { 'method': method, 'headers': [['Authorization', authHeader]], 'body': JSON.stringify(body) })).json();
+        return (await fetch(this.#base_url + '/' + endpoint, { method: method, headers: [['Authorization', authHeader], ['Content-Type', 'application/json']], body: JSON.stringify(body) })).json();
     }
 }
