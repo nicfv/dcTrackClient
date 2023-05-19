@@ -137,5 +137,48 @@
         "method": "delete",
         "description": "Delete a Connector Image using the Connector ID.",
         "endpoint": "api/v2/settings/connectors/{connectorId}/images"
+    },
+    "getDataPorts": {
+        "description": "Use the REST API to retrieve details from all data ports on an item. If the operation was successful, a status code 200 is displayed, and the body contains the item's data port details. If the operation failed, an error code is returned.",
+        "endpoint": "api/v1/items/{itemId}/dataports"
+    },
+    "getDataPort": {
+        "description": "Use the REST API to read the details of an item's data port. To do this, specify the item and item data port ID. If the operation was successful, a status code 200 is displayed, and the body contains the item's data port details. If the operation failed, an error code is returned.",
+        "endpoint": "api/v1/items/{itemId}/dataports/{dataportId}"
+    },
+    "createDataPorts": {
+        "method": "post",
+        "description": "Use the REST API to create data ports for an existing item. If ports are already defined for the item because it is included in the Item Models Library, you can use the REST API to create additional ports for the item. Payload contains data port parameter details in json format. All required fields must be included.",
+        "endpoint": "api/v1/items/{itemId}/dataports"
+    },
+    "updateDataPort": {
+        "method": "put",
+        "description": "Update an item's data port details using the REST API. To do this, specify the item and data port ID, and provide the updated parameter value(s). Payload contains data port parameter details in json format. All required fields must be included.",
+        "endpoint": "api/v1/items/{itemId}/dataports/{dataportId}"
+    },
+    "deleteDataPort": {
+        "method": "delete",
+        "description": "Delete an item's data port using the REST API by specifying the item ID and data port ID. If the operation is successful, a status code 200 is displayed. If the operation failed, an error code is returned.",
+        "endpoint": "api/v1/items/{itemId}/dataports/{dataportId}"
+    },
+    "getPowerPorts": {
+        "description": "Use the REST API to retrieve details from all power ports on an item.",
+        "endpoint": "api/v1/items/{itemId}/powerports"
+    },
+    "getPowerPort": {
+        "description": "Use the REST API to retrieve details from one power port on an item.",
+        "endpoint": "api/v1/items/{itemId}/powerports/{portId}"
+    },
+    "updatePowerPort": {
+        "method": "put",
+        "description": "Use the REST API to create power ports for an existing item. If ports are already defined for the item because it is included in the Item Models Library, you can use the REST API to create additional ports for the item.",
+        "endpoint": "api/v1/items/{itemId}/powerports/{portId}",
+        "parameters": {
+            "proceedOnWarning": "boolean"
+        }
+    },
+    "getCompatibleConnector": {
+        "description": "Use the REST API to determine if a Connector is compatible with a specific Power Port.",
+        "endpoint": "api/v1/items/{itemId}/powerports/{portId}/connectors/{connectorId}/isCompatible"
     }
 }
