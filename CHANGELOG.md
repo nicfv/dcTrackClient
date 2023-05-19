@@ -1,5 +1,9 @@
 # Changelog
 
+## Unreleased
+
+- Minor updates to readme examples (text fixes)
+
 ## 0.5.2
 
 - Added API functions for managing item ports

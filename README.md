@@ -69,7 +69,7 @@ console.log(response);
 ### On Success
 This function returns the JSON object for the newly created item. This is an example response if `returnDetails` was set to false.
 ```json
-{ "item": { "id": 1234, "tiName": "item" } }
+{ "item": { "id": 1234, "tiName": "item name" } }
 ```
 
 ### On Failure
@@ -104,12 +104,12 @@ let response = await api.getItem(1234);
 
 ### Python
 ```py
-response = api.updateItem(976, False, {'tiSerialNumber': 12345})
+response = api.updateItem(1234, False, {'tiSerialNumber': 12345})
 ```
 
 ### JavaScript
 ```js
-let response = await api.updateItem(977, false, { 'tiSerialNumber': 12345 });
+let response = await api.updateItem(1234, false, { 'tiSerialNumber': 12345 });
 ```
 
 ## Search for an item
