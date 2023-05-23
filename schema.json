@@ -7,17 +7,6 @@
             "description": "Represents one single HTTP transaction as a function in the API client.",
             "type": "object",
             "properties": {
-                "method": {
-                    "description": "The HTTP method for this transaction.",
-                    "enum": [
-                        "get",
-                        "post",
-                        "put",
-                        "patch",
-                        "delete"
-                    ],
-                    "default": "get"
-                },
                 "endpoint": {
                     "description": "The HTTP URL endpoint for this transaction.",
                     "type": "string"

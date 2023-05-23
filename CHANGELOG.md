@@ -3,6 +3,8 @@
 ## Unreleased
 
 - Minor updates to readme examples (text fixes)
+- HTTP method is inferred by the function name (e.g. `getItem()` = GET request)
+- Remove `method` from `api.json`
 
 ## 0.5.2
 

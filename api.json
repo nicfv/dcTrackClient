@@ -5,7 +5,6 @@
         "description": "Get item details using the item ID."
     },
     "createItem": {
-        "method": "post",
         "description": "Create a new item. When returnDetails is set to true, the API call will return the full json payload. If set to false, the call returns only the \"id\" and \"tiName\".",
         "endpoint": "api/v2/dcimoperations/items",
         "parameters": {
@@ -13,7 +12,6 @@
         }
     },
     "updateItem": {
-        "method": "put",
         "description": "Update an existing item. When returnDetails is set to true, the API call will return the full json payload. If set to false, the call returns only the \"id\" and \"tiName\".",
         "endpoint": "api/v2/dcimoperations/items/{id}",
         "parameters": {
@@ -21,12 +19,10 @@
         }
     },
     "deleteItem": {
-        "method": "delete",
         "description": "Delete an item using the item ID.",
         "endpoint": "api/v2/dcimoperations/items/{id}"
     },
     "searchItems": {
-        "method": "post",
         "description": "Search for items using criteria JSON object. Search criteria can be any of the fields applicable to items, including custom fields. Specify the fields to be included in the response. This API supports pagination. Returns a list of items with the specified information.",
         "endpoint": "api/v2/quicksearch/items",
         "parameters": {
@@ -34,12 +30,11 @@
             "pageSize": "number"
         }
     },
-    "cabinetItems": {
+    "getCabinetItems": {
         "description": "Returns a list of Items contained in a Cabinet using the ItemID of the Cabinet. The returned list includes all of the Cabinet's Items including Passive Items.",
         "endpoint": "api/v2/items/cabinetItems/{CabinetId}"
     },
-    "manageItemsBulk": {
-        "method": "post",
+    "createItemsBulk": {
         "description": "Add/Update/Delete Items.",
         "endpoint": "api/v2/dcimoperations/items/bulk"
     },
@@ -48,17 +43,14 @@
         "endpoint": "api/v2/makes"
     },
     "createMake": {
-        "method": "post",
         "description": "Add a new Make. Returns JSON entity containing Make information that was passed in from the Request payload.",
         "endpoint": "api/v2/makes"
     },
     "updateMake": {
-        "method": "put",
         "description": "Modify a Make. Returns JSON entity containing Make information that was passed in from the Request payload.",
         "endpoint": "api/v2/makes/{makeId}"
     },
     "deleteMake": {
-        "method": "delete",
         "description": "Delete a Make.",
         "endpoint": "api/v2/makes/{makeId}"
     },
@@ -74,7 +66,6 @@
         }
     },
     "createModel": {
-        "method": "post",
         "description": "Add a new Model. Returns JSON entity containing Make information that was passed in from the Request payload. \"proceedOnWarning\" relates to the warning messages that are thrown in dcTrack when you try to delete custom fields that are in use. The \"proceedOnWarning\" value can equal either \"true\" or \"false.\" If \"proceedOnWarning\" equals \"true,\" business warnings will be ignored. If \"proceedOnWarning\" equals \"false,\" business warnings will not be ignored. Fields that are not in the payload will remain unchanged.",
         "endpoint": "api/v2/models",
         "parameters": {
@@ -83,12 +74,10 @@
         }
     },
     "deleteModel": {
-        "method": "delete",
         "description": "Delete a Model using the Model ID.",
         "endpoint": "api/v2/models/{id}"
     },
     "searchModels": {
-        "method": "post",
         "description": "Search for models by user supplied search criteria. Returns a list of models with the \"selectedColumns\" returned in the payload. Search by Alias is not supported.",
         "endpoint": "api/v2/quicksearch/models",
         "parameters": {
@@ -97,7 +86,6 @@
         }
     },
     "deleteModelImage": {
-        "method": "delete",
         "description": "Delete a Mode Image using the Model ID and the Image Orientation, where id is the Model Id and orientation is either front or back",
         "endpoint": "api/v2/models/images/{id}/{orientation}"
     },
@@ -109,22 +97,18 @@
         }
     },
     "createConnector": {
-        "method": "post",
         "description": "Add a new Connector. Returns JSON entity containing Connector information that was passed in from the Request payload.",
         "endpoint": "api/v2/settings/connectors"
     },
     "updateConnector": {
-        "method": "put",
         "description": "Update an existing Connector. Returns JSON entity containing Connector information that was passed in from the Request payload.",
         "endpoint": "api/v2/settings/connectors/{connectorId}"
     },
     "deleteConnector": {
-        "method": "post",
         "description": "Delete one or more Connector records.",
         "endpoint": "api/v2/settings/connectors/delete"
     },
     "searchConnectors": {
-        "method": "post",
         "description": "Retrieve a List of Connectors. Returns JSON entity containing Connector information that was passed in from the Request payload. Please note, Compatible Connectors are not returned by this API, but can be returned when querying a single Connector using the /api/v2/settings/connectors/{connectorId} API.",
         "endpoint": "api/v2/settings/connectors/quicksearch",
         "parameters": {
@@ -134,7 +118,6 @@
         }
     },
     "deleteConnectorImage": {
-        "method": "delete",
         "description": "Delete a Connector Image using the Connector ID.",
         "endpoint": "api/v2/settings/connectors/{connectorId}/images"
     },
@@ -147,17 +130,14 @@
         "endpoint": "api/v1/items/{itemId}/dataports/{dataportId}"
     },
     "createDataPorts": {
-        "method": "post",
         "description": "Use the REST API to create data ports for an existing item. If ports are already defined for the item because it is included in the Item Models Library, you can use the REST API to create additional ports for the item. Payload contains data port parameter details in json format. All required fields must be included.",
         "endpoint": "api/v1/items/{itemId}/dataports"
     },
     "updateDataPort": {
-        "method": "put",
         "description": "Update an item's data port details using the REST API. To do this, specify the item and data port ID, and provide the updated parameter value(s). Payload contains data port parameter details in json format. All required fields must be included.",
         "endpoint": "api/v1/items/{itemId}/dataports/{dataportId}"
     },
     "deleteDataPort": {
-        "method": "delete",
         "description": "Delete an item's data port using the REST API by specifying the item ID and data port ID. If the operation is successful, a status code 200 is displayed. If the operation failed, an error code is returned.",
         "endpoint": "api/v1/items/{itemId}/dataports/{dataportId}"
     },
@@ -170,7 +150,6 @@
         "endpoint": "api/v1/items/{itemId}/powerports/{portId}"
     },
     "updatePowerPort": {
-        "method": "put",
         "description": "Use the REST API to create power ports for an existing item. If ports are already defined for the item because it is included in the Item Models Library, you can use the REST API to create additional ports for the item.",
         "endpoint": "api/v1/items/{itemId}/powerports/{portId}",
         "parameters": {

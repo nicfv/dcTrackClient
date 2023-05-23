@@ -15,6 +15,18 @@ except Exception as e:
     exit(1)
 
 
+def getMethod(transaction: str) -> str:
+    if transaction.startswith('get'):
+        return 'GET'
+    if transaction.startswith('create') or transaction.startswith('search'):
+        return 'POST'
+    if transaction.startswith('update'):
+        return 'PUT'
+    if transaction.startswith('delete'):
+        return 'DELETE'
+    raise Exception('Unknown request type for ' + transaction)
+
+
 def hasPayload(method: str) -> bool:
     return method == 'POST' or method == 'PUT' or method == 'PATCH'
 
@@ -87,7 +99,7 @@ def generateJavaScriptFunction(transaction: str, method: str, endpoint: str, des
 
 for transaction in api:
     if not str(transaction).startswith('$'):
-        METHOD = (api[transaction].get('method') or 'get').upper()
+        METHOD = getMethod(transaction)
         ENDPT = str(api[transaction]['endpoint'])
         PARAMS = re.findall('{([^}]+)}', ENDPT)
         NUMPARAMS = len(PARAMS)
