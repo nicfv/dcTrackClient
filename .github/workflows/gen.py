@@ -104,7 +104,8 @@ for transaction in api:
         PARAMS = re.findall('{([^}]+)}', ENDPT)
         NUMPARAMS = len(PARAMS)
         PTYPES = ['string'] * NUMPARAMS
-        DESC = api[transaction].get('description')
+        DESC = api[transaction].get(
+            'description') or 'No documentation provided for `' + transaction + '`.'
         QUERY = api[transaction].get('parameters')
         A = len(PARAMS)
         for i in range(0, A):
