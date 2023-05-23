@@ -18,7 +18,7 @@ except Exception as e:
 def getMethod(transaction: str) -> str:
     if transaction.startswith('get'):
         return 'GET'
-    if transaction.startswith('create') or transaction.startswith('search'):
+    if transaction.startswith('create') or transaction.startswith('search') or transaction.startswith('remove'):
         return 'POST'
     if transaction.startswith('update'):
         return 'PUT'

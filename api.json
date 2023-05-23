@@ -104,7 +104,7 @@
         "description": "Update an existing Connector. Returns JSON entity containing Connector information that was passed in from the Request payload.",
         "endpoint": "api/v2/settings/connectors/{connectorId}"
     },
-    "deleteConnector": {
+    "removeConnector": {
         "description": "Delete one or more Connector records.",
         "endpoint": "api/v2/settings/connectors/delete"
     },
