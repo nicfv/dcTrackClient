@@ -5,6 +5,7 @@
 - Minor updates to readme examples (text fixes)
 - HTTP method is inferred by the function name (e.g. `getItem()` = GET request)
 - Remove `method` from `api.json`
+- Show message when no documentation is provided
 
 ## 0.5.2
 
