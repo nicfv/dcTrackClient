@@ -1,6 +1,6 @@
 # Changelog
 
-## Unreleased
+## 0.5.3
 
 - Minor updates to readme examples (text fixes)
 - HTTP method is inferred by the function name (e.g. `getItem()` = GET request)
