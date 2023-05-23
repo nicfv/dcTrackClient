@@ -159,5 +159,43 @@
     "getCompatibleConnector": {
         "description": "Use the REST API to determine if a Connector is compatible with a specific Power Port.",
         "endpoint": "api/v1/items/{itemId}/powerports/{portId}/connectors/{connectorId}/isCompatible"
+    },
+    "getLocations": {
+        "description": "Returns a list for all Locations.",
+        "endpoint": "api/v1/locations"
+    },
+    "getLocation": {
+        "description": "Get a single Location. Returns json containing location data for the specified ID.",
+        "endpoint": "api/v1/locations{locationId}"
+    },
+    "createLocation": {
+        "description": "Add a Location. Returns the JSON entity containing location info that was passed in. Note: \"proceedOnWarning\" relates to the warning messages that are thrown in dcTrack when you try to delete custom fields that are in use. The \"proceedOnWarning\" value can equal either \"true\" or \"false.\" If \"proceedOnWarning\" equals \"true,\" business warnings will be ignored. If \"proceedOnWarning\" equals \"false,\" business warnings will not be ignored.",
+        "endpoint": "api/v1/locations",
+        "parameters": {
+            "proceedOnWarning": "boolean"
+        }
+    },
+    "updateLocation": {
+        "description": "Modify Location details for a single Location. Payload contains new location details. You do not have have to provide all details, but only those that you want to modify. Returns JSON entity containing Location information that was passed in from the Request payload.",
+        "endpoint": "api/v1/locations/{locationId}",
+        "parameters": {
+            "proceedOnWarning": "boolean"
+        }
+    },
+    "deleteLocation": {
+        "description": "Delete a Location.",
+        "endpoint": "api/v1/locations/{locationId}"
+    },
+    "searchLocations": {
+        "description": "Search for Locations by user supplied search criteria. Returns a list of Locations with the \"selectedColumns\" returned in the payload.",
+        "endpoint": "api/v2/quicksearch/locations",
+        "parameters": {
+            "pageNumber": "number",
+            "pageSize": "number"
+        }
+    },
+    "getLocationFieldList": {
+        "description": "Returns a list of all Location fields.",
+        "endpoint": "api/v2/quicksearch/locations/locationListFields"
     }
 }
