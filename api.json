@@ -1,6 +1,7 @@
 {
     "$schema": "schema.json",
     "getItem": {
+        "invalid": "parameter",
         "endpoint": "api/v2/dcimoperations/items/{id}",
         "description": "Get item details using the item ID."
     },
