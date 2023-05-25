@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.6.1
+
+- Add `updateModel` API function
+
 ## 0.6.0
 
 - Add location API endpoints

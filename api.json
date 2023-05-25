@@ -73,6 +73,14 @@
             "proceedOnWarning": "boolean"
         }
     },
+    "updateModel": {
+        "description": "Modify an existing Model. Fields that are not in the payload will remain unchanged. Returns a JSON entity containing Make information that was passed in from the Request payload.",
+        "endpoint": "api/v2/models/{id}",
+        "parameters": {
+            "returnDetails": "boolean",
+            "proceedOnWarning": "boolean"
+        }
+    },
     "deleteModel": {
         "description": "Delete a Model using the Model ID.",
         "endpoint": "api/v2/models/{id}"
