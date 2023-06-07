@@ -4,7 +4,6 @@ on:
   push:
     branches:
       - main
-  workflow_dispatch:
 
 jobs:
   deploy:
@@ -16,8 +15,7 @@ jobs:
       with:
         python-version: '3.x'
     - name: Install dependencies
-      run: |
-        pip install build twine jsonschema requests
+      run: pip install build twine jsonschema requests
     - name: Get versions
       run: |
         echo "NPM=$(npm v dctrackclient version)" >> "${GITHUB_ENV}"
