@@ -205,5 +205,37 @@
     "getLocationFieldList": {
         "description": "Returns a list of all Location fields.",
         "endpoint": "api/v2/quicksearch/locations/locationListFields"
+    },
+    "getSublocationTree": {
+        "description": "Get the sublocation tree.",
+        "endpoint": "api/v2/subLocations/tree"
+    },
+    "getSublocations": {
+        "description": "Get all sub-locations for a given location in the hierarchy. The locationId is the ID of the location to get the sub-locations for.",
+        "endpoint": "api/v2/subLocations/list/{locationId}"
+    },
+    "getSublocationsOfType": {
+        "description": "Get all sub-locations of given type for a given location in the hierarchy. The locationId is the id of the location you are querying the sub-location types for. The type is one of either 5016 and 5017 for rows and aisles respectively.",
+        "endpoint": "api/v2/subLocations/{locationId}/type/{typeCode}"
+    },
+    "getChildSublocations": {
+        "description": "Get all child sub-locations for a given sub-location in the hierarchy. The locationId is the ID of the location to fetch the sub-locations for. The subLocationId is the ID of the parent sub-location that you are querying the children of.",
+        "endpoint": "api/v2/subLocations/{subLocationId}/children"
+    },
+    "getSublocation": {
+        "description": "Get details for a given sub-location. The subLocationId is the id of the sub-location you are querying for.",
+        "endpoint": "api/v2/subLocations/{subLocationId}"
+    },
+    "createSublocation": {
+        "description": "Add a new sub-location to the given location. Returns a list from the Sub-Location Hash.",
+        "endpoint": "api/v2/subLocations"
+    },
+    "updateSublocation": {
+        "description": "Update a sub-location. Returns a list from the Sub-Location Hash.",
+        "endpoint": "api/v2/subLocations/{subLocationId}"
+    },
+    "deleteSublocation": {
+        "description": "Deletes the given sub-location. The locationId is the ID of the location that the sub-location belongs to and the subLocationId is the ID of the location you are querying. Returns a success message upon success.",
+        "endpoint": "api/v2/subLocations/{subLocationId}"
     }
 }

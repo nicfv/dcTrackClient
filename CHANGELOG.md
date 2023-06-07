@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.6.2
+
+- Add sublocation API endpoints
+
 ## 0.6.1
 
 - Add `updateModel` API function
