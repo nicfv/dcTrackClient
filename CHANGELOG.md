@@ -1,6 +1,6 @@
 # Changelog
 
-## Unreleased
+## 0.7.0
 
 - Add `Client.generateToken()` function to generate and return an API token
     - All API calls now require an API token
