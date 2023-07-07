@@ -1,5 +1,13 @@
 # Changelog
 
+## Unreleased
+
+- Stricter `schema.json`
+    - Function names must begin with `get`, `create`, `search`, `remove`, `update`, or `delete`
+    - Endpoints cannot start with a slash
+    - Descriptions must contain at least 1 character
+    - If `parameters` is set, it must contain at least 1 parameter
+
 ## 0.6.2
 
 - Add sublocation API endpoints
