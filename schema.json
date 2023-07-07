@@ -3,17 +3,19 @@
     "type": "object",
     "patternProperties": {
         "^\\$": true,
-        "^[a-zA-Z][a-zA-Z0-9_]*$": {
+        "^(get|create|search|remove|update|delete)[A-Z][a-zA-Z0-9_]*$": {
             "description": "Represents one single HTTP transaction as a function in the API client.",
             "type": "object",
             "properties": {
                 "endpoint": {
-                    "description": "The HTTP URL endpoint for this transaction.",
-                    "type": "string"
+                    "description": "The HTTP URL endpoint for this transaction, without the leading slash.",
+                    "type": "string",
+                    "pattern": "^[^/]"
                 },
                 "description": {
                     "description": "A short description, used for documentation.",
-                    "type": "string"
+                    "type": "string",
+                    "minLength": 1
                 },
                 "parameters": {
                     "description": "List all query parameters here.",
@@ -29,6 +31,7 @@
                             "default": "string"
                         }
                     },
+                    "minProperties": 1,
                     "additionalProperties": false
                 }
             },
