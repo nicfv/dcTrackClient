@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+- Add `Client.generateToken()` function to generate and return an API token
+    - All API calls now require an API token
+    - If no API token is provided, one will be provisioned automatically
+    - Added documentation in `README.md` regarding generating tokens
 - Stricter `schema.json`
     - Function names must begin with `get`, `create`, `search`, `remove`, `update`, or `delete`
     - Endpoints cannot start with a slash

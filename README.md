@@ -37,6 +37,20 @@ const api = new Client('https://dctrack.example.com/', { username: 'user', passw
 const api = new Client('https://dctrack.example.com/', { apiToken: 'token' });
 ```
 
+## Obtain an API Token
+> Obtain an API token using the `Client.generateToken()` function provided. Re-authentication is not necessary, the API token will automatically be used in subsequent API calls. The function returns the token's value in case the user wants to store the token for the next initialization of the API.
+
+### Python
+```py
+token = api.generateToken()
+```
+
+### JavaScript
+Notice the `await` keyword before the function call. This is because the JavaScript library is asynchronous and returns a `Promise` to the return value. All the API calls in this library require that keyword.
+```js
+const token = await api.generateToken();
+```
+
 # Usage Example
 This section demonstrates item manipulation with the API client.
 
@@ -55,7 +69,7 @@ print(response)
 ```
 
 ### JavaScript
-Notice the `await` keyword before the function call. This is because the JavaScript library is asynchronous and returns a `Promise` to the return value. All the API calls in this library require that keyword.
+See the JavaScript section on [obtaining an API token](#obtain-an-api-token) why the `await` keyword is required.
 ```js
 let response = await api.createItem(true/false, {
     'cmbLocation': 'item location',

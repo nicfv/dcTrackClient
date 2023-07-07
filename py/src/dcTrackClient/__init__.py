@@ -9,10 +9,14 @@ class Client:
         self.__PASSWORD = password
         self.__APITOKEN = apiToken
 
-    def __request(self, method: str, endpoint: str, body: dict = None):
-        if self.__USERNAME and self.__PASSWORD:
-            return requests.request(method,  self.__BASE_URL + '/' + endpoint, json=body, auth=(self.__USERNAME, self.__PASSWORD)).json()
-        elif self.__APITOKEN:
-            return requests.request(method, self.__BASE_URL + '/' + endpoint, json=body, headers={'Authorization': 'Token ' + self.__APITOKEN}).json()
+    def generateToken(self) -> str:
+        """Generate and return an API token."""
+        if self.__USERNAME and self.__PASSWORD and not self.__APITOKEN:
+            return requests.request('POST', self.__BASE_URL + '/api/v2/authentication/login', auth=(self.__USERNAME, self.__PASSWORD)).headers['Authorization'].split()[1]
         else:
-            raise Exception('Undefined username/password or token.')
+            raise Exception('Username/password undefined or token predefined.')
+
+    def __request(self, method: str, endpoint: str, body: dict = None):
+        if not self.__APITOKEN:
+            self.__APITOKEN = self.generateToken()
+        return requests.request(method, self.__BASE_URL + '/' + endpoint, json=body, headers={'Authorization': 'Bearer ' + self.__APITOKEN}).json()
