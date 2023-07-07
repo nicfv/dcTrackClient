@@ -1,8 +1,8 @@
 {
     "$schema": "schema.json",
     "getItem": {
-        "endpoint": "api/v2/dcimoperations/items/{id}",
-        "description": "Get item details using the item ID."
+        "description": "Get item details using the item ID.",
+        "endpoint": "api/v2/dcimoperations/items/{id}"
     },
     "createItem": {
         "description": "Create a new item. When returnDetails is set to true, the API call will return the full json payload. If set to false, the call returns only the \"id\" and \"tiName\".",
