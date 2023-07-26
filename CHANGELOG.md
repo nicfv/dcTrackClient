@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.7.1
+
+- Add location favorites API endpoints
+- Add cabinet space API endpoints
+
 ## 0.7.0
 
 - Add `Client.generateToken()` function to generate and return an API token

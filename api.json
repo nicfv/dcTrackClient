@@ -237,5 +237,29 @@
     "deleteSublocation": {
         "description": "Deletes the given sub-location. The locationId is the ID of the location that the sub-location belongs to and the subLocationId is the ID of the location you are querying. Returns a success message upon success.",
         "endpoint": "api/v2/subLocations/{subLocationId}"
+    },
+    "getLocationFavorites": {
+        "description": "Retrieve a List of Location Favorites for a specific User.",
+        "endpoint": "api/v2/users/{username}/favorites/LOCATION"
+    },
+    "getLocationFavoritesAllUsers": {
+        "description": "Retrieve a List of Location Favorites for all Users. Returns JSON entity containing Location Favorite information for all users.",
+        "endpoint": "api/v2/users/favorites/LOCATION"
+    },
+    "updateLocationFavorites": {
+        "description": "Assign Location Favorites to a user where username is a valid dcTrack user and \"favorite\" is either true or false to indicate whether you are assigning or unassigning. JSON entity containing all Location Favorites for the specified user.",
+        "endpoint": "api/v2/users/{username}/favorites"
+    },
+    "updateLocationFavoritesAllUsers": {
+        "description": "Assign Location Favorites to a user. To Assign favorites the \"favorite\" column should be set to true. To Unassign favorites the \"favorite\" column should be set to false. Returns JSON entity containing all Location Favorites for the specified users.",
+        "endpoint": "api/v2/users/favorites"
+    },
+    "searchCabinetSpace": {
+        "description": "Find Cabinets with available space based on RUs within the specified Locations.",
+        "endpoint": "api/v2/capacity/cabinets/list/search"
+    },
+    "searchAvailableRUs": {
+        "description": "Find the starting RUs within a Cabinet with the specified number of contiguous RUs.",
+        "endpoint": "api/v2/items/uposition/available"
     }
 }
