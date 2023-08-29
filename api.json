@@ -278,7 +278,7 @@
         "description": "Delete explicit permission.",
         "endpoint": "api/v2/permissions/explicit/{permissionId}"
     },
-    "updatePermissionsBulk": {
+    "createPermissionsBulk": {
         "description": "Add/Update/Delete explicit permissions.",
         "endpoint": "api/v2/permissions/explicit/bulk"
     },
@@ -293,5 +293,17 @@
     "getPermissionsByEntityId": {
         "description": "Get explicit permissions by Entity Type and Entity ID. Returns JSON entity containing Permission information.",
         "endpoint": "api/v2/permissions/explicit/{entityType}/{entityId}"
+    },
+    "getRecords": {
+        "description": "Get a list of records (options) for use in drop-down lists by indicating a list type and an ID. ID is optional for some list types. Returns a list of records for a given list type.",
+        "endpoint": "api/v2/dcimoperations/lookups/{listType}/{id}"
+    },
+    "getPicklistOptions": {
+        "description": "Get a list of records (options) for use in drop-down lists for dcTrack standard fields by list type. Returns a list of records for a given list type.",
+        "endpoint": "api/v2/dcimoperations/picklists/{listType}"
+    },
+    "updatePicklistOptions": {
+        "description": "Update a list of records (options) for use in drop-down lists for dcTrack standard fields by list type. Returns a list of records for a given list type.",
+        "endpoint": "api/v2/dcimoperations/picklists/{listType}"
     }
 }

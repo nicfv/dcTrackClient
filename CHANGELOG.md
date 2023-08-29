@@ -3,6 +3,7 @@
 ## 0.7.2
 
 - Add permission API endpoints
+- Add lookup list API endpoints
 
 ## 0.7.1
 
