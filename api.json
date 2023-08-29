@@ -282,7 +282,7 @@
         "description": "Add/Update/Delete explicit permissions.",
         "endpoint": "api/v2/permissions/explicit/bulk"
     },
-    "getAllPermissions": {
+    "getPermissions": {
         "description": "Get all explicit permissions. Returns JSON entity containing Permission information.",
         "endpoint": "api/v2/permissions/explicit"
     },

@@ -1,5 +1,10 @@
 # Changelog
 
+## Unreleased
+
+- Functions that begin with `submit` are `PUT` requests
+- Rename `getAllPermissions()` to `getPermissions()` (*all* is implied)
+
 ## 0.7.2
 
 - Add permission API endpoints
