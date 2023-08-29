@@ -1,9 +1,11 @@
 # Changelog
 
-## Unreleased
+## 0.8.0
 
 - Functions that begin with `submit` are `PUT` requests
+- Functions that begin with `complete` are `PUT` requests
 - Rename `getAllPermissions()` to `getPermissions()` (*all* is implied)
+- Add API endpoints for requests and work orders
 
 ## 0.7.2
 

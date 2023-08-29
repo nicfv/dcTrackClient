@@ -305,5 +305,33 @@
     "updatePicklistOptions": {
         "description": "Update a list of records (options) for use in drop-down lists for dcTrack standard fields by list type. Returns a list of records for a given list type.",
         "endpoint": "api/v2/dcimoperations/picklists/{listType}"
+    },
+    "submitRequest": {
+        "description": "Create a request.",
+        "endpoint": "api/v2/dcimoperations/items/{id}"
+    },
+    "deleteRequest": {
+        "description": "Cancel a request. Returns Returns request ID canceled.",
+        "endpoint": "api/v2/dcimoperations/requests/{requestId}"
+    },
+    "completeRequest": {
+        "description": "Change request status/stage to Complete using the request ID. Optionally, pass a request body with additional information. Returns request status information.",
+        "endpoint": "api/v2/dcimoperations/requests/complete/{requestId}"
+    },
+    "completeWorkOrder": {
+        "description": "Complete work order and change work order status/stage to Complete. Optionally, pass a request body with additional information. Returns work order status information.",
+        "endpoint": "api/v2/dcimoperations/workorders/complete/{workOrderId}"
+    },
+    "getRequestStatusByItem": {
+        "description": "Get a list of pending request status information for a given item ID. Returns list of request status.",
+        "endpoint": "api/v2/dcimoperations/requests/pending/{itemId}"
+    },
+    "getRequest": {
+        "description": "Get request status information for a given request ID. Returns full request status information.",
+        "endpoint": "api/v2/dcimoperations/requests/status/{requestId}"
+    },
+    "searchRequests": {
+        "description": "Get request status information for a given request ID. Returns full request status information.",
+        "endpoint": "api/v2/dcimoperations/search/list/requests"
     }
 }

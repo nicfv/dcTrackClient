@@ -20,7 +20,7 @@ def getMethod(transaction: str) -> str:
         return 'GET'
     if transaction.startswith('create') or transaction.startswith('search') or transaction.startswith('remove'):
         return 'POST'
-    if transaction.startswith('update') or transaction.startswith('submit'):
+    if transaction.startswith('update') or transaction.startswith('submit') or transaction.startswith('complete'):
         return 'PUT'
     if transaction.startswith('delete'):
         return 'DELETE'
