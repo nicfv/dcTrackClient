@@ -261,5 +261,37 @@
     "searchAvailableRUs": {
         "description": "Find the starting RUs within a Cabinet with the specified number of contiguous RUs.",
         "endpoint": "api/v2/items/uposition/available"
+    },
+    "getPermission": {
+        "description": "Get explicit permission by ID. Returns JSON entity containing Permission information for the specified Permission Id.",
+        "endpoint": "api/v2/permissions/explicit/{permissionId}"
+    },
+    "createPermission": {
+        "description": "Add explicit permission. Returns JSON entity containing Permission information for the added Permission.",
+        "endpoint": "api/v2/permissions/explicit"
+    },
+    "updatePermission": {
+        "description": "Update explicit permission. Returns JSON entity containing Permission information for the updated Permission.",
+        "endpoint": "api/v2/permissions/explicit/{permissionId}"
+    },
+    "deletePermission": {
+        "description": "Delete explicit permission.",
+        "endpoint": "api/v2/permissions/explicit/{permissionId}"
+    },
+    "updatePermissionsBulk": {
+        "description": "Add/Update/Delete explicit permissions.",
+        "endpoint": "api/v2/permissions/explicit/bulk"
+    },
+    "getAllPermissions": {
+        "description": "Get all explicit permissions. Returns JSON entity containing Permission information.",
+        "endpoint": "api/v2/permissions/explicit"
+    },
+    "getPermissionsByEntityType": {
+        "description": "Get explicit permissions by Entity Type. Returns JSON entity containing Permission information.",
+        "endpoint": "api/v2/permissions/explicit/entityType/{entityType}"
+    },
+    "getPermissionsByEntityId": {
+        "description": "Get explicit permissions by Entity Type and Entity ID. Returns JSON entity containing Permission information.",
+        "endpoint": "api/v2/permissions/explicit/{entityType}/{entityId}"
     }
 }

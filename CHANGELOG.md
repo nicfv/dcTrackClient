@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.7.2
+
+- Add permission API endpoints
+
 ## 0.7.1
 
 - Add location favorites API endpoints
