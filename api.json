@@ -471,5 +471,34 @@
     "removeTicketAssignment": {
         "description": "Unassign Item from Ticket. This API will disassociate multiple Items or Circuits from a Ticket. The Ids provided in the Request should be the IDs of the assignment records.",
         "endpoint": "api/v2/tickets/assignment/{entityType}/unassign"
+    },
+    "createCustomField": {
+        "description": "Creates a custom field. Returns the newly created custom field.",
+        "endpoint": "api/v2/settings/lists/customFields"
+    },
+    "updateCustomField": {
+        "description": "Update the definitions of the specified custom fields. Returns the updated custom field definitions.",
+        "endpoint": "api/v2/settings/lists/customFields/{customFieldId}"
+    },
+    "getCustomFields": {
+        "description": "Get a list of custom fields. Returns a list of all custom fields.",
+        "endpoint": "api/v2/settings/lists/customFields",
+        "parameters": {
+            "orderPickListsBy": "string"
+        }
+    },
+    "getCustomField": {
+        "description": "Get the custom field details for a given customFieldId. Passing a -1 value will return all the labels with null values. Returns a list of custom field details for the specified custom field.",
+        "endpoint": "api/v2/settings/lists/customFields/{customFieldId}",
+        "parameters": {
+            "orderPickListsBy": "string"
+        }
+    },
+    "deleteCustomFields": {
+        "description": "Deletes the specified custom field and associated pick lists.",
+        "endpoint": "api/v2/settings/lists/customFields/{customFieldId}",
+        "parameters": {
+            "proceedOnWarning": "boolean"
+        }
     }
 }
