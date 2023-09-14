@@ -424,5 +424,52 @@
     "getActualReadingsByPort": {
         "description": "Get Actual Readings By Port.",
         "endpoint": "api/v2/powerChain/ports/actualReadings/{portId}"
+    },
+    "getTicket": {
+        "description": "Get Ticket by Ticket ID.",
+        "endpoint": "api/v2/tickets/{ticketId}"
+    },
+    "createTicket": {
+        "description": "Create a Ticket.",
+        "endpoint": "api/v2/tickets"
+    },
+    "updateTicket": {
+        "description": "Update a Ticket.",
+        "endpoint": "api/v2/tickets/{ticketId}"
+    },
+    "deleteTicket": {
+        "description": "Delete Ticket by Ticket ID.",
+        "endpoint": "api/v2/tickets/{ticketId}",
+        "parameters": {
+            "proceedOnWarning": "boolean"
+        }
+    },
+    "searchTickets": {
+        "description": "Search for Tickets using criteria JSON object. Search criteria can be any of the fields applicable to Tickets, including custom fields. Specify the fields to be included in the response. This API supports pagination. Returns a list of Tickets with the specified information.",
+        "endpoint": "api/v2/quicksearch/tickets",
+        "parameters": {
+            "pageNumber": "number",
+            "pageSize": "number"
+        }
+    },
+    "getTicketFieldList": {
+        "description": "Returns a list of all Ticket fields.",
+        "endpoint": "api/v2/quicksearch/tickets/ticketListFields"
+    },
+    "deleteTicketAssignment": {
+        "description": "Delete Ticket Assignment. This API will disassociate an Item or a Circuit from a Ticket. Where <assignmentId> is the record ID of the Assignment record.",
+        "endpoint": "api/v2/tickets/assignment/{assignmentId}"
+    },
+    "createTicketsBulk": {
+        "description": "Add/Update/Delete Tickets in Bulk. The body of the Request should contain the required fields required to perform the specified Method.",
+        "endpoint": "api/v2/tickets/bulk"
+    },
+    "createTicketAssignment": {
+        "description": "Assign Item to Ticket. The entity Ids provided in the Request should be the ID of the entity to be assigned to the Ticket.",
+        "endpoint": "api/v2/tickets/assignment/{entityType}/assign"
+    },
+    "removeTicketAssignment": {
+        "description": "Unassign Item from Ticket. This API will disassociate multiple Items or Circuits from a Ticket. The Ids provided in the Request should be the IDs of the assignment records.",
+        "endpoint": "api/v2/tickets/assignment/{entityType}/unassign"
     }
 }

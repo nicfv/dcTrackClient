@@ -4,6 +4,7 @@
 
 - Functions that begin with `retrieve` are `POST` requests
 - Added power chain API endpoints
+- Added ticket API endpoints
 
 ## 0.8.1
 
