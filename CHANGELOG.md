@@ -1,5 +1,10 @@
 # Changelog
 
+## Unreleased
+
+- Functions that begin with `retrieve` are `POST` requests
+- Added power chain API endpoints
+
 ## 0.8.1
 
 - Add connection API endpoints

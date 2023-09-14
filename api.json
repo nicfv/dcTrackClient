@@ -392,5 +392,37 @@
             "itemName": "string",
             "portName": "string"
         }
+    },
+    "retrievePowerChain": {
+        "description": "Get links and nodes of entire power chain with customizable node details for a specific location. JSON entity containing data for the entire Power Chain for a given Location. The example below illustrates returning all fields by leaving the \"selectedColumn\" array empty. To limit the columns in the response, list the specific columns.",
+        "endpoint": "api/v2/powerChain/{locationId}"
+    },
+    "retrievePowerSumForPorts": {
+        "description": "Get power sum for power ports with port ID list.",
+        "endpoint": "api/v2/powerChain/powerSum/bulk"
+    },
+    "retrievePowerSumForItems": {
+        "description": "Get power sum for power ports using item ID list.",
+        "endpoint": "api/v2/items/powerSum/bulk"
+    },
+    "getActualReadingsByItem": {
+        "description": "Update Actual Readings for Power Ports for an Item.",
+        "endpoint": "api/v2/powerChain/items/actualReadings/{itemId}"
+    },
+    "retrieveActualReadingsByItems": {
+        "description": "Retrieve Actual Readings for Power Ports for multiple Items.",
+        "endpoint": "api/v2/powerChain/items/actualReadings/bulk"
+    },
+    "retrieveActualReadingsByPorts": {
+        "description": "Update Actual Readings for Power Ports on one or more items.",
+        "endpoint": "api/v2/powerChain/ports/actualReadings/bulk"
+    },
+    "updateActualReadingsByPort": {
+        "description": "Update Actual Readings By Port.",
+        "endpoint": "api/v2/powerChain/ports/actualReadings/{portId}"
+    },
+    "getActualReadingsByPort": {
+        "description": "Get Actual Readings By Port.",
+        "endpoint": "api/v2/powerChain/ports/actualReadings/{portId}"
     }
 }
