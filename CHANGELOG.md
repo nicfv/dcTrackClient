@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.8.1
+
+- Add connection API endpoints
+
 ## 0.8.0
 
 - Functions that begin with `submit` are `PUT` requests
