@@ -1,10 +1,11 @@
 # Changelog
 
-## Unreleased
+## 0.9.0
 
 - Functions that begin with `retrieve` are `POST` requests
 - Added power chain API endpoints
 - Added ticket API endpoints
+- Added custom fields API endpoints
 
 ## 0.8.1
 
