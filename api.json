@@ -333,5 +333,64 @@
     "searchRequests": {
         "description": "Get request status information for a given request ID. Returns full request status information.",
         "endpoint": "api/v2/dcimoperations/search/list/requests"
+    },
+    "createDataConnection": {
+        "description": "Create a data connection. Returns the newly created data connection.",
+        "endpoint": "api/v2/connections/dataconnections"
+    },
+    "updateDataConnection": {
+        "description": "Edit a data connection. Returns the newly edited data connection.",
+        "endpoint": "api/v2/connections/dataconnections/{connectionId}"
+    },
+    "getDataConnection": {
+        "description": "Get a data connection and associated details. Requires the ID of the connection you want to retrieve. Returns the requested data connection and associated details.",
+        "endpoint": "api/v2/connections/dataconnections/{connectionId}"
+    },
+    "getDataConnectionByNode": {
+        "description": "Get data connection details based on the specified location, item name, and port name. The itemName specified in the URL must be either the starting or ending Item in the connection. This API does not support Data Panel Ports. Returns the JSON payload with the requested data connection details.",
+        "endpoint": "api/v2/connections/dataconnections",
+        "parameters": {
+            "location": "string",
+            "itemName": "string",
+            "portName": "string"
+        }
+    },
+    "deleteDataConnection": {
+        "description": "Deletes the specified data connection.",
+        "endpoint": "api/v2/connections/dataconnections/{connectionId}"
+    },
+    "createPowerConnection": {
+        "description": "Create a power connection. Returns the newly created power connection.",
+        "endpoint": "api/v2/connections/powerconnections"
+    },
+    "updatePowerConnection": {
+        "description": "Edit a power connection. Returns the newly edited power connection.",
+        "endpoint": "api/v2/connections/powerconnections/{connectionId}"
+    },
+    "getPowerConnection": {
+        "description": "Get a power connection and associated details. Requires the ID of the connection you want to retrieve. Returns the requested power connection and associated details.",
+        "endpoint": "api/v2/connections/powerconnections/{connectionId}"
+    },
+    "getPowerConnectionByNode": {
+        "description": "Get power connection details based on the specified location, item name, and port name. Returns the JSON payload with the requested power connection details.",
+        "endpoint": "api/v2/connections/powerconnections",
+        "parameters": {
+            "location": "string",
+            "itemName": "string",
+            "portName": "string"
+        }
+    },
+    "deletePowerConnection": {
+        "description": "Deletes the specified power connection. Deletes the power connection.",
+        "endpoint": "api/v2/connections/powerconnections/{connectionId}"
+    },
+    "getCircuit": {
+        "description": "Get power or data circuit details based on the specified circuit type location, item name, and port name. Returns the JSON payload with the requested power or data connection details.",
+        "endpoint": "api/v2/dcimoperations/circuits/{circuitType}",
+        "parameters": {
+            "location": "string",
+            "itemName": "string",
+            "portName": "string"
+        }
     }
 }
