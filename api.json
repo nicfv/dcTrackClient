@@ -532,5 +532,21 @@
     "deleteRelationship": {
         "description": "Delete an Entity Link using the Relationship ID.",
         "endpoint": "api/v2/relationship/{id}"
+    },
+    "getFloormapConfig": {
+        "description": "Get floormap configuration for specific location.",
+        "endpoint": "api/v2/visualization/floormaps/configuration/{locationId}"
+    },
+    "getFloormapConfigs": {
+        "description": "Get floormap configuration for all locations.",
+        "endpoint": "api/v2/visualization/floormaps/configuration"
+    },
+    "updateFloormapConfig": {
+        "description": "Modify floormap configuration for specific location.",
+        "endpoint": "api/v2/visualization/floormaps/configuration/{locationId}"
+    },
+    "createFloormapConfigsBulk": {
+        "description": "Modify floormap configurations for multiple locations.",
+        "endpoint": "api/v2/visualization/floormaps/configuration/bulk"
     }
 }

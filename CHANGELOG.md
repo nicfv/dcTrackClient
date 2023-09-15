@@ -4,6 +4,7 @@
 
 - Added Webhooks API endpoints
 - Added relationship API endpoints
+- Added visualization API endpoints
 
 ## 0.9.0
 
