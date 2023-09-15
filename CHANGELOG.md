@@ -3,6 +3,7 @@
 ## Unreleased
 
 - Added Webhooks API endpoints
+- Added relationship API endpoints
 
 ## 0.9.0
 

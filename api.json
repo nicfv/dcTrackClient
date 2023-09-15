@@ -512,5 +512,25 @@
     "deleteWebhook": {
         "description": "Deletes the Webhook configuration.",
         "endpoint": "api/v2/notifications/config"
+    },
+    "getRelationship": {
+        "description": "Get Relationship details using the Relationship ID.",
+        "endpoint": "api/v2/relationship/{id}"
+    },
+    "createRelationship": {
+        "description": "Create a new entity link. Returns the newly created item JSON object. Note: Supported entity Types are \"PROJECT\", \"TICKET\", \"ITEM\".",
+        "endpoint": "api/v2/relationship"
+    },
+    "getRelationshipByEntity": {
+        "description": "Search for Entity Links BY Entity Type and Entity ID. Entity Types are \"PROJECT\", \"ITEM\". Returns a Project JSON object.",
+        "endpoint": "api/v2/relationship/{entityType}/{entityId}"
+    },
+    "searchRelationships": {
+        "description": "Search for Entity Links. Returns an array of Relationship links for the entity type.",
+        "endpoint": "api/v2/relationship/search"
+    },
+    "deleteRelationship": {
+        "description": "Delete an Entity Link using the Relationship ID.",
+        "endpoint": "api/v2/relationship/{id}"
     }
 }
