@@ -564,5 +564,25 @@
     "getProject": {
         "description": "Get Project details using the Project ID. Returns a Project JSON object.",
         "endpoint": "api/v2/dcimoperations/projects/{id}"
+    },
+    "createPartClass": {
+        "description": "Create Part Classes. Returns JSON entity containing data for the created Part Class.",
+        "endpoint": "api/v2/parts/classes"
+    },
+    "updatePartClass": {
+        "description": "Update Part Classes. Returns JSON entity containing data for the updated Part Class.",
+        "endpoint": "api/v2/parts/classes/{classId}"
+    },
+    "deletePartClass": {
+        "description": "Delete Part Class by Class ID.",
+        "endpoint": "api/v2/parts/classes/{classId}"
+    },
+    "getPartClasses": {
+        "description": "Returns a list of Part Classes with basic information.",
+        "endpoint": "api/v2/parts/classes"
+    },
+    "createPartClassesBulk": {
+        "description": "Create, Update, Delete Part Classes in Bulk. Returns JSON entity containing a list of response codes.",
+        "endpoint": "api/v2/parts/classes/bulk"
     }
 }

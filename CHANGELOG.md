@@ -7,6 +7,7 @@
     - Relationships
     - Visualizations
     - Projects
+    - Part classes
 
 ## 0.9.0
 
