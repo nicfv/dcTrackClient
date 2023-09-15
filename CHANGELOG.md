@@ -1,5 +1,9 @@
 # Changelog
 
+## Unreleased
+
+- Added Webhooks API endpoints
+
 ## 0.9.0
 
 - Functions that begin with `retrieve` are `POST` requests

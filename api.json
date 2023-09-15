@@ -500,5 +500,17 @@
         "parameters": {
             "proceedOnWarning": "boolean"
         }
+    },
+    "getWebhook": {
+        "description": "Returns the current Webhook configuration information.",
+        "endpoint": "api/v2/notifications/config"
+    },
+    "updateWebhook": {
+        "description": "Update the Webhook configuration information.",
+        "endpoint": "api/v2/notifications/config"
+    },
+    "deleteWebhook": {
+        "description": "Deletes the Webhook configuration.",
+        "endpoint": "api/v2/notifications/config"
     }
 }
