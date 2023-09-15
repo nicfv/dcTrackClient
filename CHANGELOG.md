@@ -2,9 +2,11 @@
 
 ## Unreleased
 
-- Added Webhooks API endpoints
-- Added relationship API endpoints
-- Added visualization API endpoints
+- Added API endpoints for:
+    - Webhooks
+    - Relationships
+    - Visualizations
+    - Projects
 
 ## 0.9.0
 

@@ -548,5 +548,21 @@
     "createFloormapConfigsBulk": {
         "description": "Modify floormap configurations for multiple locations.",
         "endpoint": "api/v2/visualization/floormaps/configuration/bulk"
+    },
+    "createProject": {
+        "description": "Add a new Project. JSON entity containing Project information that was passed in from the Request payload.",
+        "endpoint": "api/v2/dcimoperations/projects"
+    },
+    "updateProject": {
+        "description": "Modify a Project. JSON entity containing Project information that was passed in from the Request payload.",
+        "endpoint": "api/v2/dcimoperations/projects/{id}"
+    },
+    "deleteProject": {
+        "description": "Delete a Project using the Project ID.",
+        "endpoint": "api/v2/dcimoperations/projects/{id}"
+    },
+    "getProject": {
+        "description": "Get Project details using the Project ID. Returns a Project JSON object.",
+        "endpoint": "api/v2/dcimoperations/projects/{id}"
     }
 }
