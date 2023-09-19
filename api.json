@@ -620,5 +620,57 @@
     "getPartModelFieldList": {
         "description": "Returns a list of all Part Model fields.",
         "endpoint": "api/v2/quicksearch/parts/partModelListFields"
+    },
+    "createPart": {
+        "description": "Create Part Instance. Returns JSON entity containing data for the created Part Instance.",
+        "endpoint": "api/v2/parts"
+    },
+    "getPart": {
+        "description": "Get Part Instance by Part ID. Returns JSON entity containing data for a single Part Instance.",
+        "endpoint": "api/v2/parts/{partId}"
+    },
+    "updatePart": {
+        "description": "Update Part Instance. Returns JSON entity containing data for a single Part Instance.",
+        "endpoint": "api/v2/parts/{partId}"
+    },
+    "deletePart": {
+        "description": "Delete Part Instance. JSON entity containing errors and warnings.",
+        "endpoint": "api/v2/parts/{partId}"
+    },
+    "createPartsBulk": {
+        "description": "Create, Update, Delete Part Instances in Bulk. Returns JSON entity containing a list of response codes.",
+        "endpoint": "api/v2/parts/bulk"
+    },
+    "updateStock": {
+        "description": "Adjust or Transfer Stock where \"activity\" can be \"adjust\" or \"transfer\". Returns JSON entity containing data for the transaction performed.",
+        "endpoint": "api/v2/parts/{partId}/stock/{activity}"
+    },
+    "createPartAssignment": {
+        "description": "Assign Parts to Items or Item Ports where \"assignmentType\" can be \"ITEMS\" or \"PORTS\". Returns JSON entity containing data for the assignment.",
+        "endpoint": "api/v2/parts/assignments/{assignmentType}"
+    },
+    "getPartFieldList": {
+        "description": "Returns a list of all Part fields.",
+        "endpoint": "api/v2/quicksearch/parts/partListFields"
+    },
+    "searchParts": {
+        "description": "Search for Parts using criteria JSON object. Search criteria can be any of the fields applicable to Parts, including custom fields. Specify the field to be included in the response. This API supports pagination. Returns a list of Parts with the specified information.",
+        "endpoint": "api/v2/quicksearch/parts",
+        "parameters": {
+            "pageNumber": "number",
+            "pageSize": "number"
+        }
+    },
+    "getPartTransactionFieldList": {
+        "description": "Returns a list of all Part Transaction fields.",
+        "endpoint": "api/v2/quicksearch/parts/partTransactionListFields"
+    },
+    "searchPartTransactions": {
+        "description": "Search for Part Transactions using criteria JSON object. Search criteria can be any of the fields applicable to Part Transactions, including custom fields. Specify the field to be included in the response. This API supports pagination. Returns a list of Part Transactions with the specified information.",
+        "endpoint": "api/v2/quicksearch/parts/transactions",
+        "parameters": {
+            "pageNumber": "number",
+            "pageSize": "number"
+        }
     }
 }

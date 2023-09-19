@@ -9,6 +9,7 @@
     - Projects
     - Part classes
     - Part models
+    - Parts & stock
 
 ## 0.9.0
 
