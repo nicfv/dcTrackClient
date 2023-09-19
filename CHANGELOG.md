@@ -1,8 +1,9 @@
 # Changelog
 
-## Unreleased
+## 0.9.1
 
-- Added API endpoints for:
+- Added all public facing API endpoints for dcTrack
+- New API endpoints:
     - Webhooks
     - Relationships
     - Visualizations
