@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.0.0
+
+- First full release, no major changes are expected until the next version release of dcTrack
+- Added more information in `README.md`
+
 ## 0.9.1
 
 - Added all public facing API endpoints for dcTrack

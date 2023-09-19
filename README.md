@@ -1,5 +1,3 @@
-**WARNING: this project is still under development and may not be stable!**
-
 # dcTrackClient [![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/nicfv/dcTrackClient/publish.yml?logo=github)](https://github.com/nicfv/dcTrackClient) [![PyPI](https://img.shields.io/pypi/v/dcTrackClient)](https://pypi.org/project/dcTrackClient/) [![PyPI - Downloads](https://img.shields.io/pypi/dm/dcTrackClient?logo=pypi)](https://pypi.org/project/dcTrackClient/) [![npm](https://img.shields.io/npm/v/dctrackclient)](https://www.npmjs.com/package/dctrackclient) [![npm](https://img.shields.io/npm/dt/dctrackclient?logo=npm)](https://www.npmjs.com/package/dctrackclient)
 Sunbird [dcTrack](https://www.sunbirddcim.com/) API clients in Python and JavaScript
 
@@ -38,7 +36,7 @@ const api = new Client('https://dctrack.example.com/', { apiToken: 'token' });
 ```
 
 ## Obtain an API Token
-> Obtain an API token using the `Client.generateToken()` function provided. Re-authentication is not necessary, the API token will automatically be used in subsequent API calls. The function returns the token's value in case the user wants to store the token for the next initialization of the API.
+> Obtain an API token using the `Client.generateToken()` function provided. Re-authentication is not necessary, as the API token will automatically be used in subsequent API calls. The function returns the token's value in case the user wants to store the token for the next initialization of the API.
 
 ### Python
 ```py
@@ -55,11 +53,12 @@ const token = await api.generateToken();
 This section demonstrates item manipulation with the API client.
 
 ## Create an item
-> This example shows the minimum attributes required to create an item using the [`createItem`](#createitemreturndetails-payload) function. View the comprehensive list of item attributes in the [official documentation](https://www.sunbirddcim.com/help/dcTrack/v900/API/en/Default.htm#APIGuide/REST_API_JSON_Objects_for_Managed_Items.htm). Make sure to capture the return value of this function to see the created item details, such as the unique numeric item ID, or to determine if an error occurred while creating an item.
+> This example shows the minimum attributes required to create an item using the [`createItem`](#createitemreturndetails-payload) function. View the comprehensive list of item attributes in the [official documentation](#official-dctrack-documentation). Make sure to capture the return value of this function to see the created item details, such as the unique numeric item ID, or to determine if an error occurred while creating an item.
 
 ### Python
 ```py
-response = api.createItem(True/False, {
+# Set `returnDetails = True` to return the complete item field list.
+response = api.createItem(False, {
     'cmbLocation': 'item location',
     'tiName': 'item name',
     'cmbMake': 'item make',
@@ -71,7 +70,8 @@ print(response)
 ### JavaScript
 See the JavaScript section on [obtaining an API token](#obtain-an-api-token) why the `await` keyword is required.
 ```js
-let response = await api.createItem(true/false, {
+// Set `returnDetails = true` to return the complete item field list.
+let response = await api.createItem(false, {
     'cmbLocation': 'item location',
     'tiName': 'item name',
     'cmbMake': 'item make',
@@ -90,7 +90,7 @@ This function returns the JSON object for the newly created item. This is an exa
 This function returns a JSON object containing the error message.
 
 ## Retrieve item details
-> This example shows the usage of the [`getItem`](#getitemid) function.
+> This example shows the usage of the [`getItem`](#getitemid) function. This function requires the unique item's ID, shown in the [create item](#create-an-item) example. It returns the full list of item attributes.
 
 ### Python
 ```py
@@ -114,7 +114,7 @@ let response = await api.getItem(1234);
 ```
 
 ## Modify an existing item
-> This example shows the usage of the [`updateItem`](#updateitemid-returndetails-payload) function. Any number of attributes can be included in the payload to be modified.
+> This example shows the usage of the [`updateItem`](#updateitemid-returndetails-payload) function. Any number of attributes can be included in the payload to be modified. The `returnDetails` parameter behaves in the same way as in the [create item](#create-an-item) example.
 
 ### Python
 ```py
@@ -127,7 +127,7 @@ let response = await api.updateItem(1234, false, { 'tiSerialNumber': 12345 });
 ```
 
 ## Search for an item
-> This example demonstrates usage of the [`searchItems`](#searchitemspagenumber-pagesize-payload) function. Follow [this guide](https://www.sunbirddcim.com/help/dcTrack/v900/API/en/Default.htm#APIGuide/v2_Advanced_Search_API.htm) for details on creating the request payload.
+> This example demonstrates usage of the [`searchItems`](#searchitemspagenumber-pagesize-payload) function. Follow [this guide](https://www.sunbirddcim.com/help/dcTrack/v900/API/en/Default.htm#APIGuide/v2_Advanced_Search_API.htm) for details on creating the request payload. In this example, the API searches for an item based on the `tiName` field.
 
 ### Python
 ```py
