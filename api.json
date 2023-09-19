@@ -584,5 +584,41 @@
     "createPartClassesBulk": {
         "description": "Create, Update, Delete Part Classes in Bulk. Returns JSON entity containing a list of response codes.",
         "endpoint": "api/v2/parts/classes/bulk"
+    },
+    "createPartModel": {
+        "description": "Create Part Model. Returns JSON entity containing data for the created Part Model.",
+        "endpoint": "api/v2/partModels"
+    },
+    "updatePartModel": {
+        "description": "Update a Part Model. Returns JSON entity containing data for the Updated Part Model.",
+        "endpoint": "api/v2/partModels/{modelId}"
+    },
+    "deletePartModel": {
+        "description": "Delete Part Model by Model ID.",
+        "endpoint": "api/v2/partModels/{modelId}"
+    },
+    "getPartModel": {
+        "description": "Get Model by Model ID. Returns JSON entity containing data for a single Model.",
+        "endpoint": "api/v2/partModels/{modelId}"
+    },
+    "searchPartModels": {
+        "description": "Search for Part Models using criteria JSON object. Search criteria can be any of the fields applicable to Part Models, including custom fields. Specify the field to be included in the response. This API supports pagination. Returns a list of Part Models with the specified information.",
+        "endpoint": "api/v2/quicksearch/parts/models",
+        "parameters": {
+            "pageNumber": "number",
+            "pageSize": "number"
+        }
+    },
+    "deletePartModelImage": {
+        "description": "Delete a Part Model Image using the Part Model ID.",
+        "endpoint": "api/v2/partModels/images/{modelId}"
+    },
+    "createPartModelsBulk": {
+        "description": "Create, Update, Delete Part Models in Bulk. Returns JSON entity containing a list of response codes.",
+        "endpoint": "api/v2/partModels/bulk"
+    },
+    "getPartModelFieldList": {
+        "description": "Returns a list of all Part Model fields.",
+        "endpoint": "api/v2/quicksearch/parts/partModelListFields"
     }
 }

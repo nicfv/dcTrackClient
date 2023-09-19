@@ -8,6 +8,7 @@
     - Visualizations
     - Projects
     - Part classes
+    - Part models
 
 ## 0.9.0
 
