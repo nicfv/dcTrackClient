@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.0.1
+
+- Changed development status from `Beta` to `Production/Stable` (Python)
+
 ## 1.0.0
 
 - First full release, no major changes are expected until the next version release of dcTrack
