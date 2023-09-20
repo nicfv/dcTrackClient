@@ -1,6 +1,6 @@
 # Changelog
 
-## Unreleased
+## 1.0.2
 
 - Add documentation in class definition containing version number
 - Replace instances of `%VERSION%` with the current version number in any file in this project
