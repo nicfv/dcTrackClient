@@ -1,5 +1,9 @@
 # Changelog
 
+## Unreleased
+
+- In progress
+
 ## 1.0.2
 
 - Add documentation in class definition containing version number
