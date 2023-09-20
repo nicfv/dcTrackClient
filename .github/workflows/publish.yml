@@ -22,12 +22,7 @@ jobs:
         echo "PYPI=$(python .github/workflows/pypi-ver.py dctrackclient)" >> "${GITHUB_ENV}"
         echo "VER=$(grep -oE "[0-9]+\.[0-9]+\.[0-9]+" CHANGELOG.md | head -n1)" >> "${GITHUB_ENV}"
     - name: Update versions
-      run: |
-        ls **/*.*
-        ls **/*
-        ls **/*.json
-        ls *.json
-        sed -i 's/%VERSION%/${{ env.VER }}/g' **/*.*
+      run: sed -i 's/%VERSION%/${{ env.VER }}/g' py/pyproject.toml py/src/dcTrackClient/__init__.py js/package.json js/src/index.js README.md
     - name: Generate code
       run: python .github/workflows/gen.py
     - name: Build Python package

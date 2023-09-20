@@ -1,8 +1,8 @@
 # Changelog
 
-## Unreleased
+## 1.0.3
 
-- In progress
+- Fix bug where some version numbers weren't replaced. Version numbers are only replaced in select files.
 
 ## 1.0.2
 
