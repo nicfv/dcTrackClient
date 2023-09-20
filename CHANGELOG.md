@@ -1,5 +1,10 @@
 # Changelog
 
+## Unreleased
+
+- Add documentation in class definition containing version number
+- Replace instances of `%VERSION%` with the current version number in any file in this project
+
 ## 1.0.1
 
 - Changed development status from `Beta` to `Production/Stable` (Python)

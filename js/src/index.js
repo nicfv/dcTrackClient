@@ -1,3 +1,6 @@
+/**
+ * Sunbird dcTrack API client version %VERSION% in JavaScript
+ */
 export class Client {
     #base_url;
     #username;

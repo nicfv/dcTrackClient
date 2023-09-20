@@ -2,6 +2,8 @@ import requests
 
 
 class Client:
+    """Sunbird dcTrack API client version %VERSION% in Python"""
+
     def __init__(self, baseUrl: str, username: str = '', password: str = '', apiToken: str = ''):
         """Provide either a username and password, or an API token to access the dcTrack database with Python."""
         self.__BASE_URL = baseUrl
