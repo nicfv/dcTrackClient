@@ -23,5 +23,9 @@
   "bugs": {
     "url": "https://github.com/nicfv/dcTrackClient/issues"
   },
-  "homepage": "https://github.com/nicfv/dcTrackClient#readme"
+  "homepage": "https://github.com/nicfv/dcTrackClient#readme",
+  "dependencies": {
+    "https-proxy-agent": "^7.0.2",
+    "node-fetch": "^3.3.2"
+  }
 }

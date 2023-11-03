@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.1.0
+
+- Add client option to use a proxy
+- Add brief documentation on connecting through a proxy
+
 ## 1.0.5
 
 - Add `requests` dependency (Python)
