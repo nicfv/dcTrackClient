@@ -71,8 +71,7 @@ def generatePythonFunction(transaction: str, method: str, endpoint: str, descrip
     for i in range(0, len(params)):
         FUNC += ', ' + params[i] + ': ' + getPythonType(paramtypes[i])
     FUNC += '):\n        """' + description + '"""\n'
-    FUNC += '        return self.__request(\'' + \
-        method + '\', \'/' + endpoint + '\''
+    FUNC += '        return self.__request(\'' + method + '\', \'/' + endpoint + '\''
     if hasPayload(method):
         FUNC += ', ' + params[-1]
     FUNC += ')\n'
@@ -87,8 +86,7 @@ def generateJavaScriptFunction(transaction: str, method: str, endpoint: str, des
     FUNC = '\n/**\n * ' + description + '\n'
     for i in range(0, len(params)):
         FUNC += ' * @param {' + paramtypes[i] + '} ' + params[i] + '\n'
-    FUNC += ' */\nClient.prototype.' + transaction + \
-        ' = function (' + ', '.join(params) + ') {\n'
+    FUNC += ' */\nClient.prototype.' + transaction + ' = function (' + ', '.join(params) + ') {\n'
     FUNC += '    return this.request(\'' + method + '\', \'/' + endpoint + '\''
     if hasPayload(method):
         FUNC += ', ' + params[-1]
@@ -104,8 +102,7 @@ for transaction in api:
         PARAMS = re.findall('{([^}]+)}', ENDPT)
         NUMPARAMS = len(PARAMS)
         PTYPES = ['string'] * NUMPARAMS
-        DESC = api[transaction].get(
-            'description') or 'No documentation provided for `' + transaction + '`.'
+        DESC = api[transaction].get('description') or 'No documentation provided for `' + transaction + '`.'
         QUERY = api[transaction].get('parameters')
         A = len(PARAMS)
         for i in range(0, A):
@@ -118,8 +115,6 @@ for transaction in api:
         if hasPayload(METHOD):
             PARAMS += ['payload']
             PTYPES += ['object']
-        generatePythonFunction(transaction, METHOD, ENDPT,
-                               DESC, PARAMS, PTYPES, A, B)
-        generateJavaScriptFunction(transaction, METHOD, ENDPT,
-                                   DESC, PARAMS, PTYPES, A, B)
+        generatePythonFunction(transaction, METHOD, ENDPT, DESC, PARAMS, PTYPES, A, B)
+        generateJavaScriptFunction(transaction, METHOD, ENDPT, DESC, PARAMS, PTYPES, A, B)
         generateDocumentation(transaction, METHOD, ENDPT, DESC, PARAMS, PTYPES)

@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.1.3
+
+- Minor formatting updates in build files
+
 ## 1.1.2
 
 - Add `requests[socks]` dependency (Python)
