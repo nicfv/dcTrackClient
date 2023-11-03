@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.0.5
+
+- Add `requests` dependency (Python)
+
 ## 1.0.4
 
 - Use `draft-07` JSON schema
