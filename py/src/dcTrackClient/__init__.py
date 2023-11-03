@@ -19,6 +19,7 @@ class Client:
             raise Exception('Username/password undefined or token predefined.')
 
     def __request(self, method: str, endpoint: str, body: dict = None):
+        """Internal class method."""
         if not self.__APITOKEN:
             self.__APITOKEN = self.generateToken()
         return requests.request(method, self.__BASE_URL + '/' + endpoint, json=body, headers={'Authorization': 'Bearer ' + self.__APITOKEN}).json()

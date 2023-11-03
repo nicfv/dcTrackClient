@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.0.4
+
+- Use `draft-07` JSON schema
+- Internal function documentation (Python)
+
 ## 1.0.3
 
 - Fix bug where some version numbers weren't replaced. Version numbers are only replaced in select files.
