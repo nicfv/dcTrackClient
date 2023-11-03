@@ -1,5 +1,6 @@
 import fetch from 'node-fetch';
 import { HttpsProxyAgent } from 'https-proxy-agent';
+import { SocksProxyAgent } from 'socks-proxy-agent';
 /**
  * Sunbird dcTrack API client version %VERSION% in JavaScript
  */
@@ -12,12 +13,16 @@ export class Client {
     /**
      * Provide either a username and password, or an API token to access the dcTrack database with JavaScript.
      */
-    constructor(base_url = '', credentials = { username: '', password: '', apiToken: '' }, proxy = '') {
+    constructor(base_url = '', credentials = { username: '', password: '', apiToken: '' }, proxy = { https: '', socks: '' }) {
         this.#base_url = base_url;
         this.#username = credentials.username;
         this.#password = credentials.password;
         this.#apiToken = credentials.apiToken;
-        this.#proxyAgent = new HttpsProxyAgent(proxy);
+        if (proxy.https) {
+            this.#proxyAgent = new HttpsProxyAgent(proxy.https);
+        } else if (proxy.socks) {
+            this.#proxyAgent = new SocksProxyAgent(proxy.socks);
+        }
     }
 
     /**

@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.1.1
+
+- Upgrade library to use HTTP/HTTPS or SOCKS proxies (JavaScript)
+- Add instructions on how to set up a SOCKS proxy
+
 ## 1.1.0
 
 - Add client option to use a proxy
