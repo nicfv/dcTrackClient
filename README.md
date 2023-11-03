@@ -36,7 +36,7 @@ const api = new Client('https://dctrack.example.com/', { apiToken: 'token' });
 ```
 
 ## Advanced: Initialize a connection with a proxy
-> Proxies can be used for either authentication method (username/password or API token.) For the Python library, specify an HTTP or HTTPS proxy, or both. These can also be SOCKS proxies, however the `requests[socks]` module is required. For the JavaScript library, only 1 proxy is required and `https` proxies can begin with `http://` or `https://`. HTTPS will automatically upgraded to TLS. No additional modules are required.
+> Proxies can be used for either authentication method (username/password or API token) for both libraries. For the Python library, specify an HTTP or HTTPS proxy, or both. These can also be SOCKS proxies. For the JavaScript library, only 1 proxy is required and `https` proxies can either be HTTP or HTTPS. HTTPS will automatically upgraded to TLS.
 
 ### Python
 ```py

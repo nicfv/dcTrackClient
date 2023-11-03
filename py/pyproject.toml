@@ -19,7 +19,8 @@ classifiers = [
     "Operating System :: OS Independent",
 ]
 dependencies = [
-  "requests"
+  "requests",
+  "requests[socks]"
 ]
 [project.urls]
 "Homepage" = "https://github.com/nicfv/dcTrackClient/"

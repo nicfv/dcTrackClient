@@ -1,8 +1,14 @@
 # Changelog
 
+## 1.1.2
+
+- Add `requests[socks]` dependency (Python)
+- Improve documentation on using proxies
+
 ## 1.1.1
 
 - Upgrade library to use HTTP/HTTPS or SOCKS proxies (JavaScript)
+    - Add `socks-proxy-agent` dependency
 - Add instructions on how to set up a SOCKS proxy
 
 ## 1.1.0
