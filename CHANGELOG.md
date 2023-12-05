@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.1.4
+
+- `getModel()` accepts an integer ID and boolean value for returning the used counts
+
 ## 1.1.3
 
 - Minor formatting updates in build files

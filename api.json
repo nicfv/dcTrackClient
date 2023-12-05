@@ -62,7 +62,7 @@
         "description": "Get Model fields for the specified Model ID. usedCounts is an optional parameter that determines if the count of Items for the specified model is returned in the response. If set to \"true\" the counts will be included in the response, if omitted or set to \"false\" the item count will not be included in the response.",
         "endpoint": "api/v2/models/{modelId}",
         "parameters": {
-            "usedCounts": "number"
+            "usedCounts": "boolean"
         }
     },
     "createModel": {
