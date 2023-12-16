@@ -10,7 +10,7 @@
                 "endpoint": {
                     "description": "The HTTP URL endpoint for this transaction, without the leading slash.",
                     "type": "string",
-                    "pattern": "^[^/]"
+                    "pattern": "^[^/].+[^/]$"
                 },
                 "description": {
                     "description": "A short description, used for documentation.",

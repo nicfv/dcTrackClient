@@ -1,7 +1,7 @@
 {
     "$schema": "schema.json",
     "getItem": {
-        "description": "Get item details using the item ID.",
+        "description": "Get item details using the item ID. Returns an Item JSON object.",
         "endpoint": "api/v2/dcimoperations/items/{id}"
     },
     "createItem": {
@@ -54,7 +54,7 @@
         "description": "Delete a Make.",
         "endpoint": "api/v2/makes/{makeId}"
     },
-    "searchMakes": {
+    "getMakesByName": {
         "description": "Search for a make using the make name. Returns a list of makes with basic information.",
         "endpoint": "api/v2/dcimoperations/search/makes/{makeName}"
     },
@@ -92,6 +92,10 @@
             "pageNumber": "number",
             "pageSize": "number"
         }
+    },
+    "getModelsByNameAndMakeID": {
+        "description": "Search for a model using the model name and the make ID. Returns a list of models with basic information.",
+        "endpoint": "api/v2/dcimoperations/search/models/{modelName}/{makeId}"
     },
     "deleteModelImage": {
         "description": "Delete a Mode Image using the Model ID and the Image Orientation, where id is the Model Id and orientation is either front or back",
@@ -425,6 +429,14 @@
         "description": "Get Actual Readings By Port.",
         "endpoint": "api/v2/powerChain/ports/actualReadings/{portId}"
     },
+    "updateActualReadingsByPortBulk": {
+        "description": "Update Actual Readings for Power Ports on one or more items. Returns JSON entity containing Power Readings for each updated Power Port.",
+        "endpoint": "api/v2/items/{itemId}/actualReadings/{portName}/{portId}"
+    },
+    "getActualReadingsByPortBulk": {
+        "description": "Get Actual Readings for Power Ports on one or more items. Returns JSON entity containing Power Readings for each Power Port.",
+        "endpoint": "api/v2/items/{itemId}/actualReadings/{portName}/{portId}"
+    },
     "getTicket": {
         "description": "Get Ticket by Ticket ID.",
         "endpoint": "api/v2/tickets/{ticketId}"
@@ -455,10 +467,6 @@
     "getTicketFieldList": {
         "description": "Returns a list of all Ticket fields.",
         "endpoint": "api/v2/quicksearch/tickets/ticketListFields"
-    },
-    "deleteTicketAssignment": {
-        "description": "Delete Ticket Assignment. This API will disassociate an Item or a Circuit from a Ticket. Where <assignmentId> is the record ID of the Assignment record.",
-        "endpoint": "api/v2/tickets/assignment/{assignmentId}"
     },
     "createTicketsBulk": {
         "description": "Add/Update/Delete Tickets in Bulk. The body of the Request should contain the required fields required to perform the specified Method.",
@@ -494,7 +502,7 @@
             "orderPickListsBy": "string"
         }
     },
-    "deleteCustomFields": {
+    "deleteCustomField": {
         "description": "Deletes the specified custom field and associated pick lists.",
         "endpoint": "api/v2/settings/lists/customFields/{customFieldId}",
         "parameters": {

@@ -1,5 +1,18 @@
 # Changelog
 
+## 1.2.0
+
+- Update API functions to match those in dcTrack version 9.1.0
+    - Add `getModelsByNameAndMakeID()`
+    - Add functions for power port bulk actual readings
+    - Remove `deleteTicketAssignment()`
+- Update description for `getItem()`
+- Rename a few functions
+    - Change `searchMakes()` to `getMakesByName()`
+    - Change `deleteCustomFields()` to `deleteCustomField()`
+- Add link to new dcTrack API guide in `README.md`
+- Schema definition no longer allows endpoints ending in a slash
+
 ## 1.1.4
 
 - `getModel()` accepts an integer ID and boolean value for returning the used counts
