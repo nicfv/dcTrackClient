@@ -1,5 +1,10 @@
 # Changelog
 
+## Unpublished
+
+- All dcTrack 9.1.0 users are encouraged to upgrade this package from 1.2.0 to this version
+- Remove trailing slash in all API endpoints
+
 ## 1.2.0
 
 - Update API functions to match those in dcTrack version 9.1.0

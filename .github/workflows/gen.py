@@ -64,7 +64,7 @@ def generateDocumentation(transaction: str, method: str, endpoint: str, descript
 
 
 def generatePythonFunction(transaction: str, method: str, endpoint: str, description: str, params: list[str], paramtypes: list[str], a: int, b: int) -> None:
-    endpoint = endpoint.replace('{', '\' + str(').replace('}', ') + \'') + '/?'
+    endpoint = endpoint.replace('{', '\' + str(').replace('}', ') + \'') + '?'
     for i in range(a, b):
         endpoint += params[i] + '=\' + str(' + params[i] + ') + \'&'
     FUNC = '\n    def ' + transaction + '(self'
@@ -80,7 +80,7 @@ def generatePythonFunction(transaction: str, method: str, endpoint: str, descrip
 
 
 def generateJavaScriptFunction(transaction: str, method: str, endpoint: str, description: str, params: list[str], paramtypes: list[str], a: int, b: int) -> None:
-    endpoint = endpoint.replace('{', '\' + ').replace('}', ' + \'') + '/?'
+    endpoint = endpoint.replace('{', '\' + ').replace('}', ' + \'') + '?'
     for i in range(a, b):
         endpoint += params[i] + '=\' + ' + params[i] + ' + \'&'
     FUNC = '\n/**\n * ' + description + '\n'
