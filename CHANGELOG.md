@@ -1,8 +1,10 @@
 # Changelog
 
-## Unpublished
+## 1.2.1
 
-- All dcTrack 9.1.0 users are encouraged to upgrade this package from 1.2.0 to this version
+- All dcTrack 9.1.0 users are encouraged to upgrade to this package version
+    - Starting in 9.1.0, API endpoints no longer allow a trailing slash
+    - API endpoints still allow multiple consecutive slashes inside the endpoint (e.g. `api///v2///models` works)
 - Remove trailing slash in all API endpoints
 
 ## 1.2.0
