@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.2.2
+
+- Use repository shorthand in package file (JavaScript)
+
 ## 1.2.1
 
 - All dcTrack 9.1.0 users are encouraged to upgrade to this package version
