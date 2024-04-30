@@ -233,10 +233,6 @@
         "description": "Returns a list of all Location fields.",
         "endpoint": "api/v2/quicksearch/locations/locationListFields"
     },
-    "getSublocationTree": {
-        "description": "Get the sublocation tree.",
-        "endpoint": "api/v2/subLocations/tree"
-    },
     "getSublocations": {
         "description": "Get all sub-locations for a given location in the hierarchy. The locationId is the ID of the location to get the sub-locations for.",
         "endpoint": "api/v2/subLocations/list/{locationId}"
