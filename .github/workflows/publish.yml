@@ -20,7 +20,7 @@ jobs:
       run: |
         echo "NPM=$(npm v dctrackclient version)" >> "${GITHUB_ENV}"
         echo "PYPI=$(python .github/workflows/pypi-ver.py dctrackclient)" >> "${GITHUB_ENV}"
-        echo "VER=$(grep -oP "^## +([0-9]+\.[0-9]+\.[0-9]+)$" CHANGELOG.md | head -n1)" >> "${GITHUB_ENV}"
+        echo "VER=$(grep -oE "^## .*$" CHANGELOG.md | grep -oE "[0-9]+\.[0-9]+\.[0-9]+" | head -n1)" >> "${GITHUB_ENV}"
     - name: Update versions
       run: sed -i 's/%VERSION%/${{ env.VER }}/g' py/pyproject.toml py/src/dcTrackClient/__init__.py js/package.json js/src/index.js README.md
     - name: Generate code
