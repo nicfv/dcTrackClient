@@ -121,12 +121,11 @@
         "endpoint": "api/v2/settings/connectors/delete"
     },
     "searchConnectors": {
-        "description": "Retrieve a List of Connectors. Returns JSON entity containing Connector information that was passed in from the Request payload. Please note, Compatible Connectors are not returned by this API, but can be returned when querying a single Connector using the /api/v2/settings/connectors/{connectorId} API.",
-        "endpoint": "api/v2/settings/connectors/quicksearch",
+        "description": "Search for Connectors using criteria JSON object. Search criteria can be any of the fields applicable to Connector, including custom fields. Specify the fields to be included in the response. This API supports pagination. Returns a list of Connectors with the specified information.",
+        "endpoint": "api/v2/quicksearch/connectors",
         "parameters": {
             "pageNumber": "number",
-            "pageSize": "number",
-            "usedCount": "boolean"
+            "pageSize": "number"
         }
     },
     "deleteConnectorImage": {
@@ -171,6 +170,30 @@
     "getCompatibleConnector": {
         "description": "Use the REST API to determine if a Connector is compatible with a specific Power Port.",
         "endpoint": "api/v1/items/{itemId}/powerports/{portId}/connectors/{connectorId}/isCompatible"
+    },
+    "getBreakers": {
+        "description": "Get a list of all Breakers for a given Panel Item. Returns JSON entity containing an array of all the Breakers for the specified Panel Item.",
+        "endpoint": "api/v2/dcimoperations/items/{panelItemID}/breakers"
+    },
+    "getBreaker": {
+        "description": "Get a list of all Breakers for a given Panel Item. Returns JSON entity containing information for a single Panel Item Breaker.",
+        "endpoint": "api/v2/dcimoperations/items/{panelItemID}/breakers/{breakerPortId}"
+    },
+    "updateBreaker": {
+        "description": "Update a single Breaker for a given Panel Item. Returns JSON entity containing information for the updated Panel Item Breaker. Note: This API performs as a true PUT and not a PATCH. Unlike with a PATCH, you must specify all attributes even if you want to change only one. Attributes that are not included in the Request will be considered as removed.",
+        "endpoint": "api/v2/dcimoperations/items/{panelItemD}/breakers/{beakerPortID}"
+    },
+    "createBreaker": {
+        "description": "Create a single Breaker for a given Panel Item. Returns JSON entity containing information for the created Panel Item Breaker. Note: Breaker State is set based on the connection status of the Breaker. If the breaker is connected it will always be set to \"Closed\", even if \"Open\" is specified in the Request.",
+        "endpoint": "api/v2/dcimoperations/items/{panelItemId}/breakers"
+    },
+    "deleteBreaker": {
+        "description": "Delete a Breaker for a given Panel Item. Returns empty JSON.",
+        "endpoint": "api/v2/dcimoperations/items/{panelItemID}/breakers/{breakerPortId}"
+    },
+    "createBreakersBulk": {
+        "description": "Add/Update/Delete Breakers for a given Panel Item.",
+        "endpoint": "api/v2/dcimoperations/items/{panelItemID}/breakers/bulk"
     },
     "getLocations": {
         "description": "Returns a list for all Locations.",
