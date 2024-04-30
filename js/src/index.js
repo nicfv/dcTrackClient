@@ -43,6 +43,6 @@ export class Client {
         if (!this.#apiToken) {
             this.#apiToken = await this.generateToken();
         }
-        return (await fetch(this.#base_url + '/' + endpoint, { method: method, agent: this.#proxyAgent, headers: [['Authorization', 'Bearer ' + this.#apiToken], ['Content-Type', 'application/json']], body: JSON.stringify(body) })).json();
+        return (await fetch(this.#base_url + '/' + endpoint, { method: method, agent: this.#proxyAgent, headers: [['Authorization', 'Bearer ' + this.#apiToken], ['Content-Type', 'application/json']], body: JSON.stringify(body) })).json().catch(() => ({}));
     }
 }
