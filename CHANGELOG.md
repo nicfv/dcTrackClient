@@ -3,6 +3,9 @@
 ## Unreleased
 
 - Update API guide URL for dcTrack 9.1.1
+- Update `searchConnectors` API request
+- Add API endpoints for managing breakers
+- Update dependency versions (JavaScript)
 
 ## 1.2.2
 
