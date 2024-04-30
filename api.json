@@ -181,7 +181,7 @@
     },
     "updateBreaker": {
         "description": "Update a single Breaker for a given Panel Item. Returns JSON entity containing information for the updated Panel Item Breaker. Note: This API performs as a true PUT and not a PATCH. Unlike with a PATCH, you must specify all attributes even if you want to change only one. Attributes that are not included in the Request will be considered as removed.",
-        "endpoint": "api/v2/dcimoperations/items/{panelItemId}/breakers/{beakerPortId}"
+        "endpoint": "api/v2/dcimoperations/items/{panelItemId}/breakers/{breakerPortId}"
     },
     "createBreaker": {
         "description": "Create a single Breaker for a given Panel Item. Returns JSON entity containing information for the created Panel Item Breaker. Note: Breaker State is set based on the connection status of the Breaker. If the breaker is connected it will always be set to \"Closed\", even if \"Open\" is specified in the Request.",

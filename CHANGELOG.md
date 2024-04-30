@@ -1,5 +1,9 @@
 # Changelog
 
+## Unreleased
+
+- Fix another typo in `updateBreaker`
+
 ## 1.3.1
 
 - Fix `updateBreaker` arguments
