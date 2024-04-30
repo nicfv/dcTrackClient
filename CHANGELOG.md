@@ -1,8 +1,9 @@
 # Changelog
 
-## Unreleased
+## 1.3.2
 
 - Fix another typo in `updateBreaker`
+- Return empty object (`{}`) when no response is given
 
 ## 1.3.1
 
