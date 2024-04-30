@@ -1,6 +1,6 @@
 # Changelog
 
-## Unreleased
+## 1.3.0 (dcTrack 9.1.1)
 
 - Update API guide URL for dcTrack 9.1.1
 - Update `searchConnectors` API request
@@ -21,7 +21,7 @@
     - API endpoints still allow multiple consecutive slashes inside the endpoint (e.g. `api///v2///models` works)
 - Remove trailing slash in all API endpoints
 
-## 1.2.0
+## 1.2.0 (dcTrack 9.1.0)
 
 - Update API functions to match those in dcTrack version 9.1.0
     - Add `getModelsByNameAndMakeID()`
@@ -80,7 +80,7 @@
 
 - Changed development status from `Beta` to `Production/Stable` (Python)
 
-## 1.0.0
+## 1.0.0 (dcTrack 9.0.0)
 
 - First full release, no major changes are expected until the next version release of dcTrack
 - Added more information in `README.md`
