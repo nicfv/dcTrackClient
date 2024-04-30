@@ -205,7 +205,7 @@ await api.deleteItem(1234);
 
 Visit this link for the official documentation on request bodies and attrribute names.
 
-https://www.sunbirddcim.com/help/dcTrack/v910/API/en/Default.htm
+https://www.sunbirddcim.com/help/dcTrack/v911/API/en/Default.htm
 
 # Package Documentation
 
