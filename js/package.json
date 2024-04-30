@@ -23,7 +23,7 @@
   "homepage": "https://github.com/nicfv/dcTrackClient#readme",
   "dependencies": {
     "node-fetch": "^3.3.2",
-    "https-proxy-agent": "^7.0.2",
-    "socks-proxy-agent": "^8.0.2"
+    "https-proxy-agent": "^7.0.4",
+    "socks-proxy-agent": "^8.0.3"
   }
 }
