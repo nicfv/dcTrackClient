@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.3.1
+
+- Fix `updateBreaker` arguments
+- Change instances of `ID` to `Id` for consistency
+
 ## 1.3.0 (dcTrack 9.1.1)
 
 - Update API guide URL for dcTrack 9.1.1
