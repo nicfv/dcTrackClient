@@ -8,6 +8,7 @@
 - Update dependency versions (JavaScript)
 - Fix command for determining latest package version
 - Delete `getSublocationTree` (deprecated)
+- Add `updateDefaultValue` and `getFieldProperties`
 
 ## 1.2.2
 

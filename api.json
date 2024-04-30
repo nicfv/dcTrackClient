@@ -329,6 +329,17 @@
         "description": "Update a list of records (options) for use in drop-down lists for dcTrack standard fields by list type. Returns a list of records for a given list type.",
         "endpoint": "api/v2/dcimoperations/picklists/{listType}"
     },
+    "updateDefaultValue": {
+        "description": "Update the default value for a picklist field.",
+        "endpoint": "api/v2/settings/lists/defaultValue"
+    },
+    "getFieldProperties": {
+        "description": "Get the properties for all fields applicable to the Entity.",
+        "endpoint": "api/v2/settings/lists/fieldProperties",
+        "parameters": {
+            "entity": "string"
+        }
+    },
     "submitRequest": {
         "description": "Create a request.",
         "endpoint": "api/v2/dcimoperations/items/{id}"
