@@ -6,6 +6,8 @@
 - Update `searchConnectors` API request
 - Add API endpoints for managing breakers
 - Update dependency versions (JavaScript)
+- Fix command for determining latest package version
+- Delete `getSublocationTree` (deprecated)
 
 ## 1.2.2
 
