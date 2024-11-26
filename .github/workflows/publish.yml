@@ -9,11 +9,11 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4
     - name: Set up Python
-      uses: actions/setup-python@v3
+      uses: actions/setup-python@v5
       with:
-        python-version: '3.x'
+        python-version: '3.12'
     - name: Install dependencies
       run: pip install build twine jsonschema requests
     - name: Get versions
@@ -32,7 +32,7 @@ jobs:
       run: python -m twine upload py/dist/* -u __token__ -p ${{ secrets.PYPI_API_TOKEN }}
       if: ${{ env.VER != env.PYPI }}
     - name: Set up Node
-      uses: actions/setup-node@v3
+      uses: actions/setup-node@v4
       if: ${{ env.VER != env.NPM }}
       with:
         node-version: 18
