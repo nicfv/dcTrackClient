@@ -5,22 +5,27 @@
         "endpoint": "api/v2/dcimoperations/items/{id}"
     },
     "createItem": {
-        "description": "Create a new item. When returnDetails is set to true, the API call will return the full json payload. If set to false, the call returns only the \"id\" and \"tiName\".",
+        "description": "Create a new item. When returnDetails is set to true, the API call will return the full json payload. If set to false, the call returns only the \"id\" and \"tiName\". Returns the newly created item JSON object.",
         "endpoint": "api/v2/dcimoperations/items",
         "parameters": {
-            "returnDetails": "boolean"
+            "returnDetails": "boolean",
+            "proceedOnWarning": "boolean"
         }
     },
     "updateItem": {
         "description": "Update an existing item. When returnDetails is set to true, the API call will return the full json payload. If set to false, the call returns only the \"id\" and \"tiName\".",
         "endpoint": "api/v2/dcimoperations/items/{id}",
         "parameters": {
-            "returnDetails": "boolean"
+            "returnDetails": "boolean",
+            "proceedOnWarning": "boolean"
         }
     },
     "deleteItem": {
         "description": "Delete an item using the item ID.",
-        "endpoint": "api/v2/dcimoperations/items/{id}"
+        "endpoint": "api/v2/dcimoperations/items/{id}",
+        "parameters": {
+            "proceedOnWarning": "boolean"
+        }
     },
     "searchItems": {
         "description": "Search for items using criteria JSON object. Search criteria can be any of the fields applicable to items, including custom fields. Specify the fields to be included in the response. This API supports pagination. Returns a list of items with the specified information.",
