@@ -723,5 +723,13 @@
             "pageNumber": "number",
             "pageSize": "number"
         }
+    },
+    "searchAuditTrail": {
+        "description": "Search for one or more Audit Trail records by user supplied search criteria using the REST API v2. Returns a list of models with the \"selectedColumns\" returned in the payload.",
+        "endpoint": "api/v2/quicksearch/auditTrail",
+        "parameters": {
+            "pageNumber": "number",
+            "pageSize": "number"
+        }
     }
 }
