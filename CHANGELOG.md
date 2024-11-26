@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.4.1
+
+- Publish with provenance (JavaScript)
+- Update Node version to 20 (JavaScript)
+
 ## 1.4.0 (dcTrack 9.2.0)
 
 - Update API guide URL for dcTrack 9.2.0
