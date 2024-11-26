@@ -1,5 +1,16 @@
 # Changelog
 
+## 1.4.0 (dcTrack 9.2.0)
+
+- Update API guide URL for dcTrack 9.2.0
+- Update dependencies in GitHub workflow
+- Update dependencies (JavaScript)
+- Add `proceedOnWarning` parameter for item API
+- Support both `PUT` and `PATCH` (experimental) requests for updating models
+- Add `searchAuditTrail` endpoint
+- Change `submitRequest` to `createRequest`
+- Remove deprecated actuals readings API endpoints
+
 ## 1.3.2
 
 - Fix another typo in `updateBreaker`
