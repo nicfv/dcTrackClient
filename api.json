@@ -353,13 +353,17 @@
             "entity": "string"
         }
     },
-    "submitRequest": {
+    "createRequest": {
         "description": "Create a request.",
-        "endpoint": "api/v2/dcimoperations/items/{id}"
+        "endpoint": "api/v2/dcimoperations/requests"
     },
     "deleteRequest": {
         "description": "Cancel a request. Returns Returns request ID canceled.",
         "endpoint": "api/v2/dcimoperations/requests/{requestId}"
+    },
+    "createRequestBulk": {
+        "description": "Add/Update/Delete Requests in Bulk. The body of the Request should contain the required fields required to perform the specified Method. Returns JSON entity containing data for the Requests.",
+        "endpoint": "api/v2/dcimoperations/requests/bulk"
     },
     "completeRequest": {
         "description": "Change request status/stage to Complete using the request ID. Optionally, pass a request body with additional information. Returns request status information.",
