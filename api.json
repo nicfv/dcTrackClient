@@ -79,7 +79,15 @@
         }
     },
     "updateModel": {
-        "description": "Modify an existing Model. Fields that are not in the payload will remain unchanged. Returns a JSON entity containing Make information that was passed in from the Request payload.",
+        "description": "Modify an existing Model. Fields that are not in the payload will remain unchanged. Returns a JSON entity containing Make information that was passed in from the Request payload. This API performs as a PUT and not a PATCH. For example, the Request includes the dataPorts list but nothing inside it, the data ports will be removed, or you include a new port in the list , but not the current port on the device, it will remove the port that already exists and create a new port.",
+        "endpoint": "api/v2/models/{id}",
+        "parameters": {
+            "returnDetails": "boolean",
+            "proceedOnWarning": "boolean"
+        }
+    },
+    "modifyModel": {
+        "description": "Modify an existing Model. This is currently being released as a Beta version for early release and is subject to change.",
         "endpoint": "api/v2/models/{id}",
         "parameters": {
             "returnDetails": "boolean",
