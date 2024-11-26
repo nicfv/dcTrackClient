@@ -3,7 +3,7 @@
     "type": "object",
     "patternProperties": {
         "^\\$": true,
-        "^(get|create|search|remove|retrieve|update|submit|complete|delete)[A-Z][a-zA-Z0-9_]*$": {
+        "^(get|create|search|remove|retrieve|update|submit|complete|modify|delete)[A-Z][a-zA-Z0-9_]*$": {
             "description": "Represents one single HTTP transaction as a function in the API client.",
             "type": "object",
             "properties": {
