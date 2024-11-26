@@ -476,14 +476,6 @@
         "description": "Get Actual Readings By Port.",
         "endpoint": "api/v2/powerChain/ports/actualReadings/{portId}"
     },
-    "updateActualReadingsByPortBulk": {
-        "description": "Update Actual Readings for Power Ports on one or more items. Returns JSON entity containing Power Readings for each updated Power Port.",
-        "endpoint": "api/v2/items/{itemId}/actualReadings/{portName}/{portId}"
-    },
-    "getActualReadingsByPortBulk": {
-        "description": "Get Actual Readings for Power Ports on one or more items. Returns JSON entity containing Power Readings for each Power Port.",
-        "endpoint": "api/v2/items/{itemId}/actualReadings/{portName}/{portId}"
-    },
     "getTicket": {
         "description": "Get Ticket by Ticket ID.",
         "endpoint": "api/v2/tickets/{ticketId}"
