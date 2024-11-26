@@ -22,6 +22,8 @@ def getMethod(transaction: str) -> str:
         return 'POST'
     if transaction.startswith('update') or transaction.startswith('submit') or transaction.startswith('complete'):
         return 'PUT'
+    if transaction.startswith('modify'):
+        return 'PATCH'
     if transaction.startswith('delete'):
         return 'DELETE'
     raise Exception('Unknown request type for ' + transaction)
