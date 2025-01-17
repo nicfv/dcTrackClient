@@ -727,5 +727,9 @@
             "pageNumber": "number",
             "pageSize": "number"
         }
+    },
+    "getAuditTrailFieldList": {
+        "description": "Returns a list of all Audit Trail fields.",
+        "endpoint": "api/v2/quicksearch/auditTrail/auditTrailListFields"
     }
 }
