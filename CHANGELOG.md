@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.4.2
+
+- Add `getAuditTrailFieldList()` API request
+
 ## 1.4.1
 
 - Publish with provenance (JavaScript)
