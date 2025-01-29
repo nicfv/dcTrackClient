@@ -106,10 +106,6 @@
             "pageSize": "number"
         }
     },
-    "getModelsByNameAndMakeID": {
-        "description": "Search for a model using the model name and the make ID. Returns a list of models with basic information.",
-        "endpoint": "api/v2/dcimoperations/search/models/{modelName}/{makeId}"
-    },
     "deleteModelImage": {
         "description": "Delete a Mode Image using the Model ID and the Image Orientation, where id is the Model Id and orientation is either front or back",
         "endpoint": "api/v2/models/images/{id}/{orientation}"
