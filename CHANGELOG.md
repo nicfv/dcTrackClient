@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.4.3
+
+- Remove deprecated `getModelsByNameAndMakeID()` API function
+    - If you are currently using this API call, please downgrade to version `1.4.2`, but transfer all code to using the `searchModels()` API call, as the deprecated one will no longer work as of dcTrack 9.3.0
+
 ## 1.4.2
 
 - Add `getAuditTrailFieldList()` API request
