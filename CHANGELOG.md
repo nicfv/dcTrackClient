@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.4.4
+
+- Python: Add `sslVerify` option which when set to `False`, will not verify the server's TLS certificate. Defaults to `True`.
+    - Add blurb in the README file about this new behavior. For NodeJS, must set an environment variable to achieve this.
+- JavaScript: Update dependency versions
+
 ## 1.4.3
 
 - Remove deprecated `getModelsByNameAndMakeID()` API function
