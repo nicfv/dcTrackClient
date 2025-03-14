@@ -48,6 +48,8 @@ api = Client('https://dctrack.example.com/', username='user', password='pass', h
 const api = new Client('https://dctrack.example.com/', { username: 'user', password: 'pass' }, { https: 'http://proxy:port', socks: 'socks://proxy:port' });
 ```
 
+In Python, you can use the `sslVerify=True/False` argument to toggle whether SSL/TLS certificates are verified on the server. For JavaScript, toggle off this environment variable `export NODE_TLS_REJECT_UNAUTHORIZED=0` before executing the script.
+
 ## Obtain an API Token
 > Obtain an API token using the `Client.generateToken()` function provided. Re-authentication is not necessary, as the API token will automatically be used in subsequent API calls. The function returns the token's value in case the user wants to store the token for the next initialization of the API.
 
