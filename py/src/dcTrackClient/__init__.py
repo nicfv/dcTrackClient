@@ -28,7 +28,7 @@ class Client:
         """Internal class method."""
         if not self.__APITOKEN:
             self.__APITOKEN = self.generateToken()
-        response = requests.request(method, self.__BASE_URL + '/' + endpoint, json=body, headers={'Authorization': 'Bearer ' + self.__APITOKEN}, proxies=self.__PROXY)
+        response = requests.request(method, self.__BASE_URL + '/' + endpoint, json=body, headers={'Authorization': 'Bearer ' + self.__APITOKEN}, proxies=self.__PROXY, verify=self.__VERIFY)
         try:
             return response.json()
         except:
