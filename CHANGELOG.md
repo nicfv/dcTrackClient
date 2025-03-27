@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.4.5
+
+- Python: Fix bug where SSL verification wasn't applied to all requests.
+
 ## 1.4.4
 
 - Python: Add `sslVerify` option which when set to `False`, will not verify the server's TLS certificate. Defaults to `True`.
