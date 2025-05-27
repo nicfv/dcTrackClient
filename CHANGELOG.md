@@ -1,5 +1,14 @@
 # Changelog
 
+## 1.4.6 (dcTrack 9.2.3)
+
+- Add chart-related request endpoints
+    - `getCharts`
+    - `getChart`
+    - `retrieveChartData`
+    - `retrieveChartDetails`
+    - `retrieveChartParameters`
+
 ## 1.4.5
 
 - Python: Fix bug where SSL verification wasn't applied to all requests.
