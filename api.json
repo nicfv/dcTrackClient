@@ -727,5 +727,25 @@
     "getAuditTrailFieldList": {
         "description": "Returns a list of all Audit Trail fields.",
         "endpoint": "api/v2/quicksearch/auditTrail/auditTrailListFields"
+    },
+    "getCharts": {
+        "description": "Get a list of all available chart widgets in the system.",
+        "endpoint": "api/v2/reports/charts"
+    },
+    "getChart": {
+        "description": "Get chart details by ID.",
+        "endpoint": "api/v2/reports/charts/{id}"
+    },
+    "retrieveChartData": {
+        "description": "Get chart data by ID.",
+        "endpoint": "api/v2/reports/charts/{id}/data"
+    },
+    "retrieveChartDetails": {
+        "description": "Get a widget's details including a list of parameters.",
+        "endpoint": "api/v2/reports/charts/{id}/details"
+    },
+    "retrieveChartParameters": {
+        "description": "Get a listing of parameter pick-list choices. ID is the record id of the widget. Request is a map containing a key with a value containing an array of ids. 404 not found will be returned when parameter is missing or incorrect.",
+        "endpoint": "api/v2/reports/charts/parameters/{id}"
     }
 }
