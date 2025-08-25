@@ -143,11 +143,11 @@
     },
     "getDataPorts": {
         "description": "Use the REST API to retrieve details from all data ports on an item. If the operation was successful, a status code 200 is displayed, and the body contains the item's data port details. If the operation failed, an error code is returned.",
-        "endpoint": "api/v1/items/{itemId}/dataports"
+        "endpoint": "api/v2/dcimoperations/items/{itemId}/dataports"
     },
     "getDataPort": {
         "description": "Use the REST API to read the details of an item's data port. To do this, specify the item and item data port ID. If the operation was successful, a status code 200 is displayed, and the body contains the item's data port details. If the operation failed, an error code is returned.",
-        "endpoint": "api/v2/dcimoperations/items/{itemId}/dataports/dataports/{portId}"
+        "endpoint": "api/v2/dcimoperations/items/{itemId}/dataports/{portId}"
     },
     "createDataPorts": {
         "description": "Use the REST API to create data ports for an existing item. If ports are already defined for the item because it is included in the Item Models Library, you can use the REST API to create additional ports for the item. Payload contains data port parameter details in json format. All required fields must be included.",
