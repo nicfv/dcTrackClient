@@ -1,5 +1,9 @@
 # Changelog
 
+## Unreleased
+
+- Migrate dataports API endpoints from `v1` to `v2`
+
 ## 1.4.6 (dcTrack 9.2.3)
 
 - Add chart-related request endpoints
