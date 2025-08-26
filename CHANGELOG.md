@@ -3,6 +3,7 @@
 ## Unreleased
 
 - Migrate dataports API endpoints from `v1` to `v2`
+- Update GitHub actions dependency version
 
 ## 1.4.6 (dcTrack 9.2.3)
 
