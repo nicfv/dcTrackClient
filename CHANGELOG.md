@@ -1,6 +1,6 @@
 # Changelog
 
-## Unreleased
+## 1.4.7
 
 - Migrate dataports API endpoints from `v1` to `v2`
 - Update GitHub actions dependency version
