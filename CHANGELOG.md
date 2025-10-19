@@ -2,6 +2,7 @@
 
 ## 1.4.8
 
+- Update to NodeJS version 22
 - Remove references to NPM API token, since it has been deprecated and replaced with trusted publishers
 
 ## 1.4.7

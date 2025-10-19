@@ -38,10 +38,13 @@ jobs:
       uses: actions/setup-node@v4
       if: ${{ env.VER != env.NPM }}
       with:
-        node-version: 20
+        node-version: 22
         registry-url: 'https://registry.npmjs.org'
     - name: Copy readme
       run: cp README.md js
+      if: ${{ env.VER != env.NPM }}
+    - name: Update NPM
+      run: npm i -g npm@latest
       if: ${{ env.VER != env.NPM }}
     - name: Publish Node package
       run: cd js && npm publish
