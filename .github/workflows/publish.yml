@@ -46,5 +46,3 @@ jobs:
     - name: Publish Node package
       run: cd js && npm publish --provenance
       if: ${{ env.VER != env.NPM }}
-      env:
-        NODE_AUTH_TOKEN: ${{ secrets.NPM_API_TOKEN }}
