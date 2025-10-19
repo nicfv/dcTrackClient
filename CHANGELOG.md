@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.4.8
+
+- Remove references to NPM API token, since it has been deprecated and replaced with trusted publishers
+
 ## 1.4.7
 
 - Migrate dataports API endpoints from `v1` to `v2`
