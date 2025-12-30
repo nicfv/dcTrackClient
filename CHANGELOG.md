@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.5.0 (dcTrack 9.3.0)
+
+- Update workflow dependency versions
+
 ## 1.4.7
 
 - Migrate dataports API endpoints from `v1` to `v2`
