@@ -12,9 +12,9 @@ jobs:
       contents: read
       id-token: write
     steps:
-    - uses: actions/checkout@v5
+    - uses: actions/checkout@v6
     - name: Set up Python
-      uses: actions/setup-python@v5
+      uses: actions/setup-python@v6
       with:
         python-version: '3.12'
     - name: Install dependencies
@@ -35,7 +35,7 @@ jobs:
       run: python -m twine upload py/dist/* -u __token__ -p ${{ secrets.PYPI_API_TOKEN }}
       if: ${{ env.VER != env.PYPI }}
     - name: Set up Node
-      uses: actions/setup-node@v4
+      uses: actions/setup-node@v6
       if: ${{ env.VER != env.NPM }}
       with:
         node-version: 20
