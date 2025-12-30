@@ -2,6 +2,8 @@
 
 ## 1.5.0 (dcTrack 9.3.0)
 
+- Remove deprecated `getMakesByName()` function
+- Add `getMake()` and `searchMakes()` functions
 - Update workflow dependency versions
 
 ## 1.4.7
