@@ -47,6 +47,13 @@
         "description": "Returns a list of makes with basic information.",
         "endpoint": "api/v2/makes"
     },
+    "getMake": {
+        "description": "Search for one or more makes using a single make name.",
+        "endpoint": "api/v2/makes",
+        "parameters": {
+            "makeName": "string"
+        }
+    },
     "createMake": {
         "description": "Add a new Make. Returns JSON entity containing Make information that was passed in from the Request payload.",
         "endpoint": "api/v2/makes"
@@ -59,9 +66,9 @@
         "description": "Delete a Make.",
         "endpoint": "api/v2/makes/{makeId}"
     },
-    "getMakesByName": {
-        "description": "Search for a make using the make name. Returns a list of makes with basic information.",
-        "endpoint": "api/v2/dcimoperations/search/makes/{makeName}"
+    "searchMakes": {
+        "description": "Search for a make using the make name and special characters.",
+        "endpoint": "api/v2/dcimoperations/search/list/makes"
     },
     "getModel": {
         "description": "Get Model fields for the specified Model ID. usedCounts is an optional parameter that determines if the count of Items for the specified model is returned in the response. If set to \"true\" the counts will be included in the response, if omitted or set to \"false\" the item count will not be included in the response.",
