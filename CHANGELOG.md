@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.5.1
+
+- Update link to API guide on main README
+
 ## 1.5.0 (dcTrack 9.3.0)
 
 - Remove deprecated `getMakesByName()` function
