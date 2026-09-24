@@ -3,6 +3,7 @@
 ## 1.5.2 (dcTrack 9.3.5)
 
 - Add `getFieldEventList()` API function for dcTrack v9.3.5
+- JavaScript: Update proxy agent dependency versions
 
 ## 1.5.1
 
