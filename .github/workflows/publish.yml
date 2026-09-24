@@ -12,11 +12,11 @@ jobs:
       contents: read
       id-token: write
     steps:
-    - uses: actions/checkout@v6
+    - uses: actions/checkout@v7
     - name: Set up Python
-      uses: actions/setup-python@v6
+      uses: actions/setup-python@v7
       with:
-        python-version: '3.12'
+        python-version: '3.13'
     - name: Install dependencies
       run: pip install build twine jsonschema requests
     - name: Get versions
@@ -35,10 +35,10 @@ jobs:
       run: python -m twine upload py/dist/* -u __token__ -p ${{ secrets.PYPI_API_TOKEN }}
       if: ${{ env.VER != env.PYPI }}
     - name: Set up Node
-      uses: actions/setup-node@v6
+      uses: actions/setup-node@v7
       if: ${{ env.VER != env.NPM }}
       with:
-        node-version: 22
+        node-version: 24
         registry-url: 'https://registry.npmjs.org'
     - name: Copy readme
       run: cp README.md js
