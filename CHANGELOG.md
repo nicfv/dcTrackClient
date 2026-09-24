@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.5.2 (dcTrack 9.3.5)
+
+- Add `getFieldEventList()` API function for dcTrack v9.3.5
+
 ## 1.5.1
 
 - Update link to API guide on main README
