@@ -26,10 +26,10 @@ jobs:
         echo "VER=$(grep -oE "^## .*$" CHANGELOG.md | grep -oE "[0-9]+\.[0-9]+\.[0-9]+" | head -n1)" >> "${GITHUB_ENV}"
     - name: Update versions
       run: sed -i 's/%VERSION%/${{ env.VER }}/g' py/pyproject.toml py/src/dcTrackClient/__init__.py js/package.json js/src/index.js README.md
-    - name: Copy readme
-      run: cp README.md js && cp README.md py
     - name: Generate code
       run: python .github/workflows/gen.py
+    - name: Copy readme
+      run: cp README.md js && cp README.md py
     - name: Build Python package
       run: python -m build py
       if: ${{ env.VER != env.PYPI }}
