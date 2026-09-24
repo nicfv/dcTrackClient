@@ -211,6 +211,10 @@
         "description": "Add/Update/Delete Breakers for a given Panel Item.",
         "endpoint": "api/v2/dcimoperations/items/{panelItemId}/breakers/bulk"
     },
+    "getFieldEventList": {
+        "description": "Returns a list of all Event fields using the REST API v2.",
+        "endpoint": "api/v2/quicksearch/events/eventListFields"
+    },
     "getLocations": {
         "description": "Returns a list for all Locations.",
         "endpoint": "api/v1/locations"
